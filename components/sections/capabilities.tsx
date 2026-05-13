@@ -89,7 +89,7 @@ export function Capabilities() {
     <section
       ref={sectionRef}
       id="capabilities"
-      className="relative w-full overflow-hidden py-16 md:py-20"
+      className="relative w-full overflow-hidden py-12 md:py-16 lg:py-20"
       aria-label="Security Capabilities"
     >
       {/* Ambient orbs */}
@@ -104,92 +104,78 @@ export function Capabilities() {
         style={{ y: orb2Y }}
       />
 
-      <div className="relative mx-auto max-w-6xl px-6 md:px-10">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 md:px-10">
         {/* Header */}
         <motion.div
           ref={contentRef}
-          className="mb-12 flex flex-col items-center text-center"
-          style={{
-            opacity: headerOpacity,
-            scale: headerScale,
-          }}
+          className="mb-8 flex flex-col items-center text-center sm:mb-10 lg:mb-12"
+          style={{ opacity: headerOpacity, scale: headerScale }}
         >
-          <motion.span
-            className="mb-3 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.28em] text-primary"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
-            <Zap className="h-3.5 w-3.5" aria-hidden />
-            Core Capabilities
-          </motion.span>
-
           <motion.h2
-            className="mb-5 text-5xl font-bold tracking-tight text-foreground md:text-6xl"
+            className="mb-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl sm:mb-5"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Core Capabilities
+            Capabilities
           </motion.h2>
 
           <motion.div
-            className="mb-7 h-[3px] rounded-full bg-primary"
+            className="mb-5 h-[2px] rounded-full bg-primary sm:mb-6 sm:h-[3px] lg:mb-7"
             initial={{ width: 0 }}
-            whileInView={{ width: 80 }}
+            whileInView={{ width: 60 }}
             viewport={{ once: true }}
             transition={{ duration: 0.9, delay: 0.4, ease: EASE_EXPO }}
           />
 
           <motion.p
-            className="max-w-2xl text-lg leading-relaxed text-muted-foreground"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            className="max-w-2xl text-sm text-muted-foreground sm:text-base lg:text-lg"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
           >
-            Strategic cybersecurity designed to protect infrastructure, preserve operational continuity, and reduce enterprise risk.
+            Comprehensive cybersecurity capabilities designed to protect your organization from evolving threats.
           </motion.p>
         </motion.div>
 
-        {/* Radar section with capabilities */}
+        {/* Main content with radar */}
         <motion.div
-          className="relative flex min-h-[400px] items-center justify-center overflow-hidden"
+          className="relative mx-auto max-w-5xl"
           style={{
             opacity: contentOpacity,
             y: contentY,
           }}
         >
           {/* Background grid effect */}
-          <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0 opacity-3 sm:opacity-5">
             <div
-              className="h-full w-full"
+              className="h-full w-full sm:bg-[length:40px_40px] lg:bg-[length:50px_50px]"
               style={{
                 backgroundImage:
                   "linear-gradient(var(--primary) 1px, transparent 1px), linear-gradient(90deg, var(--primary) 1px, transparent 1px)",
-                backgroundSize: "50px 50px",
+                backgroundSize: "30px 30px",
               }}
             />
           </div>
 
           {/* Radar in center bottom */}
           <motion.div
-            className="absolute bottom-1 z-10"
+            className="relative mx-auto flex items-center justify-center py-8 sm:py-12 lg:py-16"
             style={{
               scale: radarScale,
               opacity: radarOpacity,
             }}
           >
-            <Radar className="h-64 w-64" />
+            <Radar className="h-40 w-40 sm:h-52 sm:w-52 lg:h-64 lg:w-64" />
           </motion.div>
 
           {/* Capabilities in semicircle (top half) */}
           <div className="absolute inset-0 flex items-center justify-center">
             {/* Top row - 2 items */}
             <motion.div
-              className="absolute top-[10%] flex w-full items-center justify-center gap-8 md:gap-16"
+              className="absolute top-[8%] flex w-full items-center justify-center gap-4 px-4 sm:gap-6 md:gap-8 lg:gap-16 sm:top-[10%]"
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -201,7 +187,7 @@ export function Capabilities() {
 
             {/* Middle left - 1 item */}
             <motion.div
-              className="absolute left-0 top-1/2 flex flex-col items-center justify-center gap-12 -translate-y-1/2"
+              className="absolute left-2 top-1/2 flex flex-col items-center justify-center gap-8 -translate-y-1/2 sm:left-0 sm:gap-12"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -212,7 +198,7 @@ export function Capabilities() {
 
             {/* Middle right - 1 item */}
             <motion.div
-              className="absolute right-0 top-1/2 flex flex-col items-center justify-center gap-12 -translate-y-1/2"
+              className="absolute right-2 top-1/2 flex flex-col items-center justify-center gap-8 -translate-y-1/2 sm:right-0 sm:gap-12"
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -223,7 +209,7 @@ export function Capabilities() {
 
             {/* Bottom row - 3 items */}
             <motion.div
-              className="absolute bottom-[10%] flex w-full items-center justify-center gap-8 md:gap-16"
+              className="absolute bottom-[8%] flex w-full items-center justify-center gap-3 px-2 sm:gap-6 md:gap-8 lg:gap-16 sm:bottom-[10%]"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -237,8 +223,17 @@ export function Capabilities() {
         </motion.div>
 
         {/* Bottom description */}
-        
-
+        <motion.div
+          className="mt-12 max-w-4xl mx-auto text-center sm:mt-16 lg:mt-20"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+        >
+          <p className="text-xs text-muted-foreground sm:text-sm">
+            Each capability is designed to provide comprehensive protection while integrating seamlessly with your existing security infrastructure.
+          </p>
+        </motion.div>
       </div>
     </section>
   );

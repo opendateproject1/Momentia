@@ -52,6 +52,8 @@ function buildThemeColors() {
   tmp.style.cssText = "position:absolute;visibility:hidden;width:1px;height:1px;";
   document.body.appendChild(tmp);
 
+  const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
   const resolve = (vars: string[], alpha = 1): string => {
     let out = `rgba(255,255,255,${alpha})`;
     for (const v of vars) {
@@ -80,38 +82,38 @@ function buildThemeColors() {
     wavePalette: [
       {
         offset: 0,
-        amplitude: 68,
+        amplitude: isMobile ? 40 : 68,
         frequency: 0.003,
         color: resolve(["--primary"], 0.8),
-        opacity: 0.42,
+        opacity: isMobile ? 0.3 : 0.42,
       },
       {
         offset: Math.PI / 2,
-        amplitude: 88,
+        amplitude: isMobile ? 50 : 88,
         frequency: 0.0026,
         color: resolve(["--accent", "--primary"], 0.7),
-        opacity: 0.32,
+        opacity: isMobile ? 0.22 : 0.32,
       },
       {
         offset: Math.PI,
-        amplitude: 58,
+        amplitude: isMobile ? 35 : 58,
         frequency: 0.0034,
         color: resolve(["--secondary", "--foreground"], 0.6),
-        opacity: 0.28,
+        opacity: isMobile ? 0.18 : 0.28,
       },
       {
         offset: Math.PI * 1.5,
-        amplitude: 78,
+        amplitude: isMobile ? 45 : 78,
         frequency: 0.0022,
         color: resolve(["--primary"], 0.3),
-        opacity: 0.22,
+        opacity: isMobile ? 0.15 : 0.22,
       },
       {
         offset: Math.PI * 2,
-        amplitude: 50,
+        amplitude: isMobile ? 30 : 50,
         frequency: 0.004,
         color: resolve(["--foreground"], 0.15),
-        opacity: 0.18,
+        opacity: isMobile ? 0.12 : 0.18,
       },
     ] satisfies WaveConfig[],
   };
@@ -168,9 +170,10 @@ export function Hero() {
     const reducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
-    const mouseInfluence = reducedMotion ? 8 : 65;
-    const influenceRadius = reducedMotion ? 150 : 300;
-    const smoothing = reducedMotion ? 0.04 : 0.08;
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    const mouseInfluence = reducedMotion || isMobile ? 4 : 65;
+    const influenceRadius = reducedMotion || isMobile ? 100 : 300;
+    const smoothing = reducedMotion || isMobile ? 0.02 : 0.08;
 
     const resize = () => {
       canvas.width = window.innerWidth;
@@ -269,15 +272,15 @@ export function Hero() {
       {/* Ambient glow orbs — sit on top of canvas */}
       <div className="pointer-events-none absolute inset-0" aria-hidden>
         <motion.div
-          className="absolute left-1/2 top-[-80px] h-[560px] w-[560px] -translate-x-1/2 rounded-full bg-primary/[0.06] blur-[160px]"
+          className="absolute left-1/2 top-[-60px] h-[320px] w-[320px] -translate-x-1/2 rounded-full bg-primary/[0.04] blur-[100px] sm:top-[-80px] sm:h-[480px] sm:w-[480px] sm:bg-primary/[0.05] sm:blur-[140px] lg:h-[560px] lg:w-[560px] lg:bg-primary/[0.06] lg:blur-[160px]"
           style={{ y: orb1Y }}
         />
         <motion.div
-          className="absolute -bottom-20 right-0 h-[400px] w-[400px] rounded-full bg-secondary/[0.07] blur-[140px]"
+          className="absolute -bottom-16 right-0 h-[240px] w-[240px] rounded-full bg-secondary/[0.05] blur-[80px] sm:-bottom-20 sm:h-[320px] sm:w-[320px] sm:bg-secondary/[0.06] sm:blur-[120px] lg:h-[400px] lg:w-[400px] lg:bg-secondary/[0.07] lg:blur-[140px]"
           style={{ y: orb2Y }}
         />
         <motion.div
-          className="absolute left-1/4 top-1/3 h-[320px] w-[320px] rounded-full bg-accent/[0.04] blur-[130px]"
+          className="absolute left-1/4 top-1/3 h-[200px] w-[200px] rounded-full bg-accent/[0.03] blur-[70px] sm:h-[260px] sm:w-[260px] sm:bg-accent/[0.035] sm:blur-[100px] lg:h-[320px] lg:w-[320px] lg:bg-accent/[0.04] lg:blur-[130px]"
           style={{ y: orb3Y }}
         />
       </div>
@@ -300,7 +303,7 @@ export function Hero() {
           scale: contentScale,
           rotateZ: contentRotation,
         }}
-        className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center px-6 pt-32 pb-28 text-center md:px-10"
+        className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center px-4 pt-20 pb-16 text-center sm:px-6 sm:pt-28 sm:pb-20 md:px-10 md:pt-32 md:pb-28"
       >
         <motion.div
           variants={container}
@@ -311,11 +314,11 @@ export function Hero() {
           {/* Eyebrow pill */}
           <motion.div
             variants={fadeUp}
-            className="mb-8 inline-flex items-center gap-2.5 rounded-full border border-border/40 bg-background/60 px-4 py-2 backdrop-blur-sm"
+            className="mb-6 inline-flex items-center gap-2 rounded-full border border-border/40 bg-background/60 px-3 py-1.5 backdrop-blur-sm sm:mb-8 sm:gap-2.5 sm:px-4 sm:py-2"
             style={{ x: eyebrowSlide }}
           >
-            <ShieldCheck className="h-4 w-4 text-primary" aria-hidden />
-            <span className="text-xs font-semibold uppercase tracking-[0.28em] text-foreground/65">
+            <ShieldCheck className="h-3.5 w-3.5 text-primary sm:h-4 sm:w-4" aria-hidden />
+            <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-foreground/65 sm:text-xs sm:tracking-[0.28em]">
               Strategic Cybersecurity Consulting
             </span>
           </motion.div>
@@ -323,7 +326,7 @@ export function Hero() {
           {/* H1 */}
           <motion.h1
             variants={fadeUp}
-            className="mb-7 text-5xl font-bold tracking-tight text-foreground md:text-7xl lg:text-[88px] leading-[0.93]"
+            className="mb-5 text-3xl font-bold tracking-tight text-foreground sm:mb-7 sm:text-4xl md:text-6xl lg:text-7xl xl:text-[88px] leading-[1.1] sm:leading-[1.05] lg:leading-[0.93]"
           >
             Precision Security for{" "}
             <span className="bg-gradient-to-r from-primary via-primary/75 to-accent bg-clip-text text-transparent">
@@ -334,7 +337,7 @@ export function Hero() {
           {/* Subtitle */}
           <motion.p
             variants={fadeUp}
-            className="mx-auto mb-11 max-w-2xl text-lg leading-relaxed text-foreground/58 md:text-xl"
+            className="mx-auto mb-6 max-w-2xl text-base leading-relaxed text-foreground/58 sm:mb-8 sm:text-lg md:text-xl lg:mb-11"
           >
             Strategic cybersecurity designed to protect infrastructure,
             preserve operational continuity, and reduce enterprise risk.
@@ -343,7 +346,7 @@ export function Hero() {
           {/* CTAs */}
           <motion.div
             variants={fadeUp}
-            className="mb-11 flex flex-col items-center justify-center sm:flex-row"
+            className="mb-8 flex flex-col items-center justify-center sm:mb-11 sm:flex-row"
           >
             <InteractiveHoverButton
               href="/#contact"
@@ -356,17 +359,17 @@ export function Hero() {
       {/* Scroll hint */}
       <motion.div
         style={{ opacity: scrollHintOpacity }}
-        className="absolute bottom-10 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-1.5"
+        className="absolute bottom-6 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-1 sm:bottom-8 sm:gap-1.5 lg:bottom-10"
         aria-hidden
       >
-        <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-foreground/30">
+        <span className="text-[9px] font-semibold uppercase tracking-[0.25em] text-foreground/30 sm:text-[10px] sm:tracking-[0.3em]">
           Scroll
         </span>
         <motion.div
-          animate={{ y: [0, 5, 0] }}
+          animate={{ y: [0, 4, 0] }}
           transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
         >
-          <ChevronDown className="h-4 w-4 text-foreground/25" />
+          <ChevronDown className="h-3.5 w-3.5 text-foreground/25 sm:h-4 sm:w-4" />
         </motion.div>
       </motion.div>
     </section>

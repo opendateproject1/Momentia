@@ -114,8 +114,8 @@ export default function Navbar() {
             width: scrolled ? "min(880px, 92vw)" : "100%",
             marginTop: scrolled ? 12 : 0,
             borderRadius: scrolled ? 9999 : 0,
-            paddingLeft: scrolled ? 20 : 40,
-            paddingRight: scrolled ? 20 : 40,
+            paddingLeft: scrolled ? 16 : 24,
+            paddingRight: scrolled ? 16 : 24,
           }}
           transition={{
             y: { duration: 0.7, ease: EASE_OUT_EXPO, delay: 0.1 },
@@ -176,14 +176,14 @@ export default function Navbar() {
                   height={44}
                   priority
                   quality={100}
-                  className="w-11 h-11"
+                  className="w-9 h-9 sm:w-10 sm:h-10 lg:w-11 lg:h-11"
                   style={{ objectFit: "contain" }}
                 />
               </motion.div>
 
               {/* Wordmark */}
               <motion.span
-                className="font-sans font-bold text-[17px] tracking-tight"
+                className="font-sans font-bold text-[15px] tracking-tight sm:text-[16px] lg:text-[17px]"
                 style={{ color: "var(--foreground)" }}
                 animate={{ letterSpacing: scrolled ? "-0.04em" : "-0.02em" }}
                 transition={{ duration: 0.4 }}
@@ -326,7 +326,7 @@ export default function Navbar() {
 
           {/* ── Mobile hamburger ── */}
           <motion.button
-            className="relative z-10 md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px]"
+            className="relative z-10 md:hidden w-9 h-9 flex flex-col items-center justify-center gap-[4px] sm:w-10 sm:h-10 sm:gap-[5px]"
             onClick={() => setMobileOpen((o) => !o)}
             whileTap={{ scale: 0.88 }}
             aria-label="Toggle menu"
@@ -337,16 +337,16 @@ export default function Navbar() {
             {[0, 1, 2].map((i) => (
               <motion.span
                 key={i}
-                className="block h-[2px] rounded-full origin-center"
+                className="block h-[1.5px] rounded-full origin-center sm:h-[2px]"
                 style={{ backgroundColor: "var(--foreground)" }}
                 animate={
                   mobileOpen
                     ? i === 0
-                      ? { rotate: 45, y: 7, width: 22 }
+                      ? { rotate: 45, y: 5.5, width: 18 }
                       : i === 1
                         ? { opacity: 0, scaleX: 0 }
-                        : { rotate: -45, y: -7, width: 22 }
-                    : { rotate: 0, y: 0, opacity: 1, scaleX: 1, width: i === 1 ? 14 : 22 }
+                        : { rotate: -45, y: -5.5, width: 18 }
+                    : { rotate: 0, y: 0, opacity: 1, scaleX: 1, width: i === 1 ? 12 : 18 }
                 }
                 transition={{ type: "spring", stiffness: 320, damping: 24 }}
               />
@@ -396,7 +396,7 @@ export default function Navbar() {
                     className="group flex items-center gap-3 px-6 py-2"
                   >
                     <motion.span
-                      className="text-4xl font-bold tracking-tight"
+                      className="text-3xl font-bold tracking-tight sm:text-4xl"
                       style={{ color: "var(--foreground)" }}
                       whileHover={{ x: 6, color: "var(--primary)" }}
                       transition={{ type: "spring", stiffness: 400, damping: 22 }}
@@ -443,7 +443,7 @@ export default function Navbar() {
                 <motion.a
                   href="/#contact"
                   onClick={() => setMobileOpen(false)}
-                  className="inline-flex items-center gap-2 px-8 py-3.5 text-base font-semibold rounded-full"
+                  className="inline-flex items-center gap-2 px-6 py-2.5 text-sm font-semibold rounded-full sm:px-8 sm:py-3.5 sm:text-base"
                   style={{
                     color: "var(--primary-foreground)",
                     backgroundColor: "var(--primary)",

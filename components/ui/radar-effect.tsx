@@ -45,7 +45,7 @@ export const Radar = ({ className }: { className?: string }) => {
       {/* Rotating sweep line */}
       <div
         style={{ transformOrigin: "right center" }}
-        className="animate-radar-spin absolute right-1/2 top-1/2 z-40 flex h-[5px] w-[400px] items-end justify-center overflow-hidden bg-transparent"
+        className="animate-radar-spin absolute right-1/2 top-1/2 z-40 flex h-[3px] w-[250px] items-end justify-center overflow-hidden bg-transparent sm:h-[4px] sm:w-[320px] lg:h-[5px] lg:w-[400px]"
       >
         <div className="relative z-40 h-[1px] w-full bg-gradient-to-r from-transparent via-[var(--primary)] to-transparent" />
       </div>
@@ -83,14 +83,16 @@ export const CapabilityIcon = ({
         scale: 1.08,
         transition: { type: "spring", stiffness: 400, damping: 25 },
       }}
-      className="relative z-50 flex flex-col items-center justify-center space-y-2"
+      className="relative z-50 flex flex-col items-center justify-center space-y-1 sm:space-y-2"
     >
-      <div className="flex h-12 w-12 items-center justify-center rounded-2xl border transition-all duration-300"
+      <div className="flex h-8 w-8 items-center justify-center rounded-xl border transition-all duration-300 sm:h-10 sm:w-10 lg:h-12 lg:w-12 sm:rounded-2xl"
         style={{
           borderColor: "var(--primary)",
           backgroundColor: "color-mix(in oklab, var(--primary) 10%, transparent)",
         }}>
-        {icon}
+        <div className="scale-75 sm:scale-90 lg:scale-100">
+          {icon}
+        </div>
       </div>
       <div className="hidden rounded-md px-2 py-1 md:block">
         <div className="text-center text-xs font-bold text-foreground/70">

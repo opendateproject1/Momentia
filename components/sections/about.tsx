@@ -199,11 +199,11 @@ function StatCard({ icon, value, prefix, suffix, decimals, label }: StatItem) {
     <motion.div
       variants={statCard}
       whileHover={{ y: -4, transition: { type: "spring", stiffness: 380, damping: 24 } }}
-      className="group relative flex flex-col items-center gap-2 p-6 text-center"
+      className="group relative flex flex-col items-center gap-1.5 p-4 text-center sm:gap-2 sm:p-6"
     >
       {/* Top accent */}
       <motion.div
-        className="absolute left-1/2 top-0 h-[2px] w-8 -translate-x-1/2 rounded-full bg-primary"
+        className="absolute left-1/2 top-0 h-[2px] w-6 -translate-x-1/2 rounded-full bg-primary sm:w-8"
         initial={{ scaleX: 0, opacity: 0 }}
         whileInView={{ scaleX: 1, opacity: 1 }}
         viewport={{ once: true }}
@@ -212,7 +212,7 @@ function StatCard({ icon, value, prefix, suffix, decimals, label }: StatItem) {
 
       {/* Icon circle */}
       <motion.div
-        className="flex h-12 w-12 items-center justify-center rounded-full text-primary"
+        className="flex h-10 w-10 items-center justify-center rounded-full text-primary sm:h-12 sm:w-12"
         style={{ backgroundColor: "color-mix(in oklab, var(--primary) 10%, transparent)" }}
         whileHover={{ rotate: 360, transition: { duration: 0.7 } }}
       >
@@ -220,20 +220,20 @@ function StatCard({ icon, value, prefix, suffix, decimals, label }: StatItem) {
       </motion.div>
 
       {/* Number */}
-      <div className="text-4xl font-bold text-foreground">
+      <div className="text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl">
         <Counter value={value} prefix={prefix} suffix={suffix} decimals={decimals} />
       </div>
 
       {/* Label */}
-      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+      <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-muted-foreground sm:text-xs sm:tracking-[0.18em]">
         {label}
       </p>
 
       {/* Underline */}
       <motion.div
         className="h-px bg-primary/40"
-        initial={{ width: "1.5rem" }}
-        whileHover={{ width: "3rem" }}
+        initial={{ width: "1rem" }}
+        whileHover={{ width: "2.5rem" }}
         transition={{ duration: 0.3 }}
       />
     </motion.div>
@@ -253,12 +253,12 @@ function ServiceCard({
   return (
     <motion.div
       variants={variant}
-      className="group flex flex-col gap-3"
+      className="group flex flex-col gap-2.5 sm:gap-3"
       whileHover={{ y: -3, transition: { type: "spring", stiffness: 400, damping: 25 } }}
     >
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-2.5 sm:gap-3">
         <motion.div
-          className="relative flex-shrink-0 rounded-xl p-2.5 text-primary"
+          className="relative flex-shrink-0 rounded-lg p-2 text-primary sm:rounded-xl sm:p-2.5"
           style={{ backgroundColor: "color-mix(in oklab, var(--primary) 12%, transparent)" }}
           whileHover={{
             rotate: [0, -8, 8, -4, 0],
@@ -268,18 +268,18 @@ function ServiceCard({
           {icon}
           {/* Key accent dot */}
           <span
-            className="absolute -top-0.5 -right-0.5 h-2 w-2 rounded-full bg-primary opacity-70"
+            className="absolute -top-0.5 -right-0.5 h-1.5 w-1.5 rounded-full bg-primary opacity-70 sm:h-2 sm:w-2"
           />
         </motion.div>
-        <h3 className="font-semibold text-foreground text-base group-hover:text-primary transition-colors duration-200">
+        <h3 className="font-semibold text-foreground text-sm group-hover:text-primary transition-colors duration-200 sm:text-base">
           {title}
         </h3>
       </div>
-      <p className="text-sm leading-relaxed text-muted-foreground pl-[46px]">
+      <p className="text-xs leading-relaxed text-muted-foreground pl-[38px] sm:text-sm sm:pl-[46px]">
         {description}
       </p>
       {/* Hover CTA */}
-      
+
     </motion.div>
   );
 }
@@ -332,7 +332,7 @@ export function About() {
     <section
       ref={sectionRef}
       id="about"
-      className="relative w-full overflow-hidden py-16 md:py-20"
+      className="relative w-full overflow-hidden py-12 md:py-16 lg:py-20"
       aria-label="About Momentia"
     >
       {/* ── Ambient orbs ── */}
@@ -363,11 +363,11 @@ export function About() {
         />
       ))}
 
-      <div className="relative mx-auto max-w-6xl px-6 md:px-10" ref={contentRef}>
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 md:px-10" ref={contentRef}>
 
         {/* ── Section header ── */}
         <motion.div
-          className="mb-12 flex flex-col items-center text-center"
+          className="mb-8 flex flex-col items-center text-center sm:mb-10 lg:mb-12"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
@@ -378,43 +378,43 @@ export function About() {
           }}
         >
           <motion.span
-            className="mb-3 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.28em] text-primary"
+            className="mb-2 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.25em] text-primary sm:mb-3 sm:gap-2 sm:tracking-[0.28em]"
             initial={{ opacity: 0, y: -10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <ShieldAlert className="h-3.5 w-3.5" aria-hidden />
+            <ShieldAlert className="h-3 w-3 sm:h-3.5 sm:w-3.5" aria-hidden />
             Modern Risk
           </motion.span>
 
-          <h2 className="mb-5 text-5xl font-bold tracking-tight text-foreground md:text-6xl">
+          <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl sm:mb-5">
             The Reality of Modern Risk
           </h2>
 
           {/* Animated underline */}
           <motion.div
-            className="mb-7 h-[3px] rounded-full bg-primary"
+            className="mb-5 h-[2px] rounded-full bg-primary sm:mb-6 sm:h-[3px] lg:mb-7"
             initial={{ width: 0 }}
-            whileInView={{ width: 80 }}
+            whileInView={{ width: 60 }}
             viewport={{ once: true }}
             transition={{ duration: 0.9, delay: 0.4, ease: EASE_EXPO }}
           />
 
-          <p className="max-w-2xl text-lg leading-relaxed text-muted-foreground mb-4">
+          <p className="max-w-2xl text-base leading-relaxed text-muted-foreground mb-3 sm:text-lg sm:mb-4">
             Cyber incidents rarely start with advanced attacks.
           </p>
-          <p className="max-w-2xl text-lg leading-relaxed text-muted-foreground font-semibold">
+          <p className="max-w-2xl text-base font-semibold leading-relaxed text-muted-foreground sm:text-lg">
             They begin with small gaps:
           </p>
         </motion.div>
 
         {/* ── 3-col layout ── */}
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-8">
+        <div className="grid grid-cols-1 gap-8 sm:gap-10 md:grid-cols-3 md:gap-8 lg:gap-12">
 
           {/* Left services */}
           <motion.div
-            className="flex flex-col gap-10"
+            className="flex flex-col gap-6 sm:gap-8 md:gap-10"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-40px" }}
@@ -433,7 +433,7 @@ export function About() {
           {/* Center image */}
           <div className="flex items-center justify-center order-first md:order-none">
             <motion.div
-              className="relative w-full max-w-[280px]"
+              className="relative w-full max-w-[220px] sm:max-w-[260px] md:max-w-[280px]"
               initial={{ opacity: 0, scale: 0.9, filter: "blur(8px)" }}
               whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
               viewport={{ once: true, margin: "-60px" }}
@@ -490,11 +490,11 @@ export function About() {
 
               {/* Floating accent orbs */}
               <motion.div
-                className="absolute -right-6 -top-6 h-14 w-14 rounded-full bg-primary/10"
+                className="absolute -right-4 -top-4 h-10 w-10 rounded-full bg-primary/10 sm:-right-6 sm:-top-6 sm:h-14 sm:w-14"
                 style={{ y: orb1Y }}
               />
               <motion.div
-                className="absolute -bottom-8 -left-8 h-16 w-16 rounded-full bg-secondary/10"
+                className="absolute -bottom-6 -left-6 h-12 w-12 rounded-full bg-secondary/10 sm:-bottom-8 sm:-left-8 sm:h-16 sm:w-16"
                 style={{ y: orb2Y }}
               />
             </motion.div>
@@ -502,7 +502,7 @@ export function About() {
 
           {/* Right services */}
           <motion.div
-            className="flex flex-col gap-10"
+            className="flex flex-col gap-6 sm:gap-8 md:gap-10"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-40px" }}
@@ -521,7 +521,7 @@ export function About() {
 
           {/* ── Stats (replaces kpis.tsx) ── */}
         <motion.div
-          className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-4"
+          className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 sm:mt-14 lg:mt-16 sm:gap-5"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-40px" }}
