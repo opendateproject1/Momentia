@@ -14,7 +14,7 @@ import { useEffect, useState } from "react";
 const NAV_LINKS = [
   { label: "Services", href: "/#services" },
   { label: "About", href: "/#about" },
-  { label: "Case Studies", href: "/#case-studies" },
+  { label: "Industries", href: "/#industries" },
   { label: "Contact", href: "/#contact" },
 ];
 
@@ -171,7 +171,7 @@ export default function Navbar() {
               >
                 <Image
                   src="/logo.png"
-                  alt="Momentia Logo"
+                  alt="Momentia IO Logo"
                   width={44}
                   height={44}
                   priority
@@ -188,7 +188,7 @@ export default function Navbar() {
                 animate={{ letterSpacing: scrolled ? "-0.04em" : "-0.02em" }}
                 transition={{ duration: 0.4 }}
               >
-                Momentia
+                Momentia IO
               </motion.span>
             </Link>
           </motion.div>
@@ -302,7 +302,7 @@ export default function Navbar() {
                   boxShadow: "0 0 0 3px color-mix(in oklab, var(--primary) 40%, transparent)",
                 }}
               />
-              <span className="relative">Book a Call</span>
+              <span className="relative">Schedule a Consultation</span>
               <motion.svg
                 width="14"
                 height="14"
@@ -452,7 +452,7 @@ export default function Navbar() {
                   whileTap={{ scale: 0.96 }}
                   transition={{ type: "spring", stiffness: 420, damping: 22 }}
                 >
-                  Book a Call
+                  Schedule a Consultation
                 </motion.a>
               </motion.div>
             </nav>
@@ -465,7 +465,7 @@ export default function Navbar() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
             >
-              Cybersecurity &amp; GRC Consulting
+              Healthcare AI &amp; Revenue Cycle Intelligence
             </motion.p>
           </motion.div>
         )}

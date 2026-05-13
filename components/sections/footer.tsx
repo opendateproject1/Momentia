@@ -12,8 +12,9 @@ const EASE_EXPO = [0.16, 1, 0.3, 1] as const
 const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'Services', href: '/#services' },
+  { label: 'Industries', href: '/#industries' },
   { label: 'Blog', href: '/blog' },
-  { label: 'Contact', href: '/contact' },
+  { label: 'Contact', href: '/#contact' },
 ]
 
 const legalLinks = [
@@ -79,7 +80,7 @@ export function Footer() {
             <Link href="/" className="flex items-center gap-2.5 w-fit">
               <Image
                 src="/logo.png"
-                alt="Momentia Logo"
+                alt="Momentia IO Logo"
                 width={36}
                 height={36}
                 priority
@@ -87,12 +88,18 @@ export function Footer() {
                 style={{ objectFit: "contain" }}
                 className="w-9 h-9"
               />
-              <span className="text-lg font-bold text-foreground">Momentia</span>
+              <span className="text-lg font-bold text-foreground">Momentia IO</span>
             </Link>
             <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
-              Enterprise-grade cybersecurity consulting. We help organizations
-              manage risk, achieve compliance, and defend against modern threats.
+              Healthcare AI • Revenue Cycle Management • Medical Billing &amp;
+              Coding • Data Strategy • Operational Modernization.
             </p>
+            <a
+              href="mailto:info@momentia.io"
+              className="w-fit text-sm text-primary underline-offset-4 hover:underline"
+            >
+              info@momentia.io
+            </a>
             {/* Social links */}
             <div className="flex items-center gap-3 pt-2">
               {socialLinks.map(({ icon: Icon, label, href }) => (
@@ -113,10 +120,10 @@ export function Footer() {
           {/* Newsletter signup */}
           <motion.div className="flex flex-col gap-3" variants={itemVariants}>
             <h3 className="text-sm font-semibold text-foreground">
-              Stay Security-Informed
+              Healthcare Operations Insights
             </h3>
             <p className="text-xs text-muted-foreground">
-              Get quarterly insights on cybersecurity trends and best practices.
+              Quarterly perspectives on revenue cycle, AI in healthcare, and operational modernization.
             </p>
             <form className="flex gap-2">
               <motion.input
@@ -186,10 +193,11 @@ export function Footer() {
             </h4>
             <div className="flex flex-col gap-2">
               {[
-                { label: 'Cloud Security', href: '#' },
-                { label: 'GRC & Compliance', href: '#' },
-                { label: 'Penetration Testing', href: '#' },
-                { label: 'Incident Response', href: '#' },
+                { label: 'Medical Billing & RCM', href: '/#services' },
+                { label: 'Medical Coding', href: '/#services' },
+                { label: 'AI & Healthcare Automation', href: '/#services' },
+                { label: 'Healthcare Data Strategy', href: '/#services' },
+                { label: 'Cybersecurity & Compliance', href: '/#services' },
               ].map((link) => (
                 <a
                   key={link.label}
@@ -230,10 +238,10 @@ export function Footer() {
           transition={{ duration: 0.5, delay: 0.3 }}
         >
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Momentia. All rights reserved.
+            © {new Date().getFullYear()} Momentia IO. All rights reserved.
           </p>
           <p className="text-xs text-muted-foreground">
-            Crafted with precision for security-first organizations.
+            Intelligent healthcare operations for modern providers.
           </p>
         </motion.div>
       </div>

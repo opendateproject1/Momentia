@@ -2,61 +2,61 @@
 
 import { TestimonialsSection } from "@/components/ui/testimonials-with-marquee"
 
-// Sample testimonials showcasing client commitments and trust
+// Healthcare provider testimonials
 const commitmentTestimonials = [
   {
     author: {
-      name: "Sarah Chen",
-      handle: "@tech_director",
+      name: "Dr. Sarah Chen",
+      handle: "CMO, Rural Health Network",
       avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face"
     },
-    text: "Momentia transformed our security posture from reactive to proactive. Their comprehensive approach to threat detection reduced our incident response time by 75%.",
-    href: "https://twitter.com"
+    text: "Momentia IO reduced our claim denials by 38% in the first quarter. Their AI-assisted denial prediction has changed how our revenue cycle team operates.",
+    href: "#"
   },
   {
     author: {
       name: "Marcus Rodriguez",
-      handle: "@infosec_lead",
+      handle: "CFO, Specialty Physician Group",
       avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
     },
-    text: "The penetration testing insights were invaluable. We patched critical vulnerabilities before they could be exploited. Momentia is now integral to our security strategy.",
-    href: "https://twitter.com"
+    text: "Reimbursements went up, AR days went down. The team brought a depth of healthcare operational experience that we hadn't seen from prior consultants.",
+    href: "#"
   },
   {
     author: {
       name: "Elena Vasquez",
-      handle: "@compliance_mgr",
+      handle: "Revenue Cycle Director, FQHC",
       avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face"
     },
-    text: "Their GRC & compliance expertise helped us achieve SOC 2 Type II certification in half the expected timeline. Highly professional and knowledgeable team.",
-    href: "https://twitter.com"
+    text: "Their coding audit and documentation improvement work translated directly into cleaner claims and a measurable lift in net collections.",
+    href: "#"
   },
   {
     author: {
       name: "David Park",
-      handle: "@ciso",
+      handle: "COO, Multi-Specialty Practice",
       avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face"
     },
-    text: "Cloud security is complex, but Momentia made it straightforward. Their monitoring platform gives us visibility we never had before. Outstanding support team.",
-    href: "https://twitter.com"
+    text: "Their data strategy work gave us KPI dashboards and operational reporting we never had visibility into. Decisions now feel data-informed instead of reactive.",
+    href: "#"
   },
   {
     author: {
       name: "Jessica Lee",
-      handle: "@cto",
+      handle: "CEO, Ambulatory Surgery Center",
       avatar: "https://images.unsplash.com/photo-1487412992267-228dcd4e2e0d?w=150&h=150&fit=crop&crop=face"
     },
-    text: "The ransomware defense strategies have been game-changing for our organization. We've prevented multiple attacks thanks to their early warning systems.",
-    href: "https://twitter.com"
+    text: "Practical AI — not hype. Momentia IO automated workflows that used to consume hours every day across our front and back office.",
+    href: "#"
   },
   {
     author: {
       name: "Michael Thompson",
-      handle: "@risk_officer",
+      handle: "Compliance Officer, Behavioral Health",
       avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
     },
-    text: "Working with Momentia has elevated our entire security program. Their team is proactive, responsive, and truly invested in our success.",
-    href: "https://twitter.com"
+    text: "Their HIPAA assessment and vendor risk work was thorough, pragmatic, and clearly tailored to a healthcare environment — not a generic security checklist.",
+    href: "#"
   }
 ]
 
@@ -64,8 +64,8 @@ export function Commitments() {
   return (
     <section id="commitments">
       <TestimonialsSection
-        title="Trusted by Leading Organizations"
-        description="See how industry leaders are securing their infrastructure with Momentia's comprehensive security solutions"
+        title="Trusted by Healthcare Providers"
+        description="See how healthcare organizations are modernizing operations, improving reimbursements, and reducing denials with Momentia IO."
         testimonials={commitmentTestimonials}
         variant="light"
       />

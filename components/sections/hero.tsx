@@ -6,10 +6,9 @@ import {
   useTransform,
   type Variants,
 } from "framer-motion";
-import { ArrowRight, ChevronDown, ShieldCheck } from "lucide-react";
+import { ChevronDown, HeartPulse } from "lucide-react";
 import { useEffect, useRef } from "react";
 
-import { Button } from "@/components/ui/button";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
@@ -317,20 +316,20 @@ export function Hero() {
             className="mb-6 inline-flex items-center gap-2 rounded-full border border-border/40 bg-background/60 px-3 py-1.5 backdrop-blur-sm sm:mb-8 sm:gap-2.5 sm:px-4 sm:py-2"
             style={{ x: eyebrowSlide }}
           >
-            <ShieldCheck className="h-3.5 w-3.5 text-primary sm:h-4 sm:w-4" aria-hidden />
+            <HeartPulse className="h-3.5 w-3.5 text-primary sm:h-4 sm:w-4" aria-hidden />
             <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-foreground/65 sm:text-xs sm:tracking-[0.28em]">
-              Strategic Cybersecurity Consulting
+              Healthcare Operations &amp; AI Intelligence
             </span>
           </motion.div>
 
           {/* H1 */}
           <motion.h1
             variants={fadeUp}
-            className="mb-5 text-3xl font-bold tracking-tight text-foreground sm:mb-7 sm:text-4xl md:text-6xl lg:text-7xl xl:text-[88px] leading-[1.1] sm:leading-[1.05] lg:leading-[0.93]"
+            className="mb-5 text-2xl font-bold tracking-tight text-foreground sm:mb-7 sm:text-3xl md:text-5xl lg:text-6xl leading-tight sm:leading-tight md:leading-[1.2] lg:leading-[1.15]"
           >
-            Precision Security for{" "}
+            Modernizing Healthcare Operations Through{" "}
             <span className="bg-gradient-to-r from-primary via-primary/75 to-accent bg-clip-text text-transparent">
-              Decisive Organizations
+              AI, Revenue Cycle &amp; Data Strategy
             </span>
           </motion.h1>
 
@@ -339,18 +338,27 @@ export function Hero() {
             variants={fadeUp}
             className="mx-auto mb-6 max-w-2xl text-base leading-relaxed text-foreground/58 sm:mb-8 sm:text-lg md:text-xl lg:mb-11"
           >
-            Strategic cybersecurity designed to protect infrastructure,
-            preserve operational continuity, and reduce enterprise risk.
+            We help healthcare organizations improve financial performance,
+            streamline operations, strengthen revenue cycle management, and
+            deliver healthcare data solutions.
           </motion.p>
 
           {/* CTAs */}
           <motion.div
             variants={fadeUp}
-            className="mb-8 flex flex-col items-center justify-center sm:mb-11 sm:flex-row"
+            className="mb-8 flex flex-col items-center justify-center gap-2.5 sm:mb-11 sm:flex-wrap sm:gap-3"
           >
             <InteractiveHoverButton
               href="/#contact"
-              text="Request a Consultation"
+              text="Schedule a Consultation"
+            />
+            <InteractiveHoverButton
+              href="/#contact"
+              text="Request a Revenue Cycle Assessment"
+            />
+            <InteractiveHoverButton
+              href="/#contact"
+              text="Request a Cybersecurity and Compliance Assessment"
             />
           </motion.div>
         </motion.div>

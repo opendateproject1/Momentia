@@ -15,42 +15,52 @@ interface SlideData {
 
 const slides: SlideData[] = [
   {
-    title: 'Cloud & Identity Security',
-    subtitle: 'Microsoft 365 & Cloud Environments',
+    title: 'Rural Hospitals',
+    subtitle: 'Critical Access & Community Facilities',
     description:
-      'Reduce exposure across cloud environments through identity governance and configuration hardening.',
+      'Tailored revenue cycle and operational support that addresses the unique financial pressures facing rural and underserved healthcare communities.',
     imageUrl:
-      'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=900&h=1200&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=900&h=1200&fit=crop&q=80',
     blurDataURL:
       'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwwUAxUTAwsTBhYTB9kYFhYaHx8aHh8ZIB4cIB4eHSMpJSUnKi4tMzM1NTc5OT3/2wBDAQICAgMDAwYDAwYMCAcIDAwwMjAxMjAxNDc1Nzc3NTU5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OT/wAARCAApACgDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8VAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCwAA8A/9k=',
   },
   {
-    title: 'Endpoint Threat Defense',
-    subtitle: 'Behavior-Based Monitoring',
+    title: 'Physician Groups & Specialty Practices',
+    subtitle: 'Independent & Multi-Specialty',
     description:
-      'Behavior-based monitoring and response to detect sophisticated threats before operational disruption.',
+      'End-to-end billing, coding, and AI-enabled automation purpose-built for physician groups and specialty practices.',
     imageUrl:
-      'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=900&h=1200&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=900&h=1200&fit=crop&q=80',
     blurDataURL:
       'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwwUAxUTAwsTBhYTB9kYFhYaHx8aHh8ZIB4cIB4eHSMpJSUnKi4tMzM1NTc5OT3/2wBDAQICAgMDAwYDAwYMCAcIDAwwMjAxMjAxNDc1Nzc3NTU5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OT/wAARCAApACgDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8VAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCwAA8A/9k=',
   },
   {
-    title: 'Resilient Backup Architecture',
-    subtitle: 'Immutable Backup Strategies',
+    title: 'Community Health Centers & FQHCs',
+    subtitle: 'Federally Qualified Health Centers',
     description:
-      'Immutable backup strategies designed to withstand ransomware and operational incidents.',
+      'Operational and reimbursement strategies that support mission-driven providers serving the highest-need patient populations.',
     imageUrl:
-      'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=900&h=1200&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=900&h=1200&fit=crop&q=80',
     blurDataURL:
       'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwwUAxUTAwsTBhYTB9kYFhYaHx8aHh8ZIB4cIB4eHSMpJSUnKi4tMzM1NTc5OT3/2wBDAQICAgMDAwYDAwYMCAcIDAwwMjAxMjAxNDc1Nzc3NTU5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OT/wAARCAApACgDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8VAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCwAA8A/9k=',
   },
   {
-    title: 'Executive Risk Assessments',
-    subtitle: 'Business Risk Insights',
+    title: 'Ambulatory Surgery Centers',
+    subtitle: 'High-Volume Surgical Operations',
     description:
-      'Security evaluations translated into clear business risk insights and remediation priorities.',
+      'Coding accuracy, claims optimization, and operational reporting designed for the speed and precision ASCs demand.',
     imageUrl:
-      'https://images.unsplash.com/photo-1510511459019-5dda7724fd87?w=900&h=1200&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1551076805-e1869033e561?w=900&h=1200&fit=crop&q=80',
+    blurDataURL:
+      'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwwUAxUTAwsTBhYTB9kYFhYaHx8aHh8ZIB4cIB4eHSMpJSUnKi4tMzM1NTc5OT3/2wBDAQICAgMDAwYDAwYMCAcIDAwwMjAxMjAxNDc1Nzc3NTU5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OT/wAARCAApACgDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8VAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCwAA8A/9k=',
+  },
+  {
+    title: 'Behavioral Health & Multi-Location Practices',
+    subtitle: 'Distributed Care Delivery',
+    description:
+      'Unified data, billing, and reporting across distributed locations — so leadership has a single source of operational truth.',
+    imageUrl:
+      'https://images.unsplash.com/photo-1559757175-5700dde675bc?w=900&h=1200&fit=crop&q=80',
     blurDataURL:
       'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwwUAxUTAwsTBhYTB9kYFhYaHx8aHh8ZIB4cIB4eHSMpJSUnKi4tMzM1NTc5OT3/2wBDAQICAgMDAwYDAwYMCAcIDAwwMjAxMjAxNDc1Nzc3NTU5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OT/wAARCAApACgDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8VAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCwAA8A/9k=',
   },

@@ -3,16 +3,24 @@
 import { useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useScroll, useTransform } from 'framer-motion'
-import { Mail, MapPin, Phone, ArrowRight, CheckCircle, Shield } from 'lucide-react'
-import Link from 'next/link'
+import { Mail, MapPin, Phone, ArrowRight, CheckCircle, HeartPulse } from 'lucide-react'
 
 const EASE_EXPO = [0.16, 1, 0.3, 1] as const
 
 const contactDetails = [
-  { icon: Mail, label: 'Email', value: 'hello@momentia.com', href: 'mailto:hello@momentia.com' },
+  { icon: Mail, label: 'Email', value: 'info@momentia.io', href: 'mailto:info@momentia.io' },
   { icon: Phone, label: 'Phone', value: '+1 (555) 000-0000', href: 'tel:+15550000000' },
-  { icon: MapPin, label: 'Location', value: 'New York, NY', href: '#' },
+  { icon: MapPin, label: 'Website', value: 'momentia.io', href: '#' },
 ]
+
+const AREAS_OF_INTEREST = [
+  'Medical Billing & Revenue Cycle',
+  'Medical Coding',
+  'AI & Healthcare Automation',
+  'Healthcare Data Strategy',
+  'Cybersecurity & Compliance',
+  'General Inquiry',
+] as const
 
 const inputBase =
   'w-full rounded-lg border border-border/60 bg-card/50 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 outline-none backdrop-blur-sm transition-all duration-200 focus:border-primary/60 focus:bg-card focus:ring-2 focus:ring-primary/10'
@@ -88,8 +96,8 @@ export function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <Shield className="h-3.5 w-3.5" aria-hidden />
-            Get In Touch
+            <HeartPulse className="h-3.5 w-3.5" aria-hidden />
+            Contact
           </motion.span>
 
           <motion.h2
@@ -99,7 +107,7 @@ export function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Request a Confidential Consultation
+            Let&apos;s Modernize Healthcare Operations Together
           </motion.h2>
 
           <motion.div
@@ -117,7 +125,7 @@ export function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.3 }}
           >
-            If your organization is evaluating cybersecurity exposure, governance maturity, or resilience planning, we welcome a confidential discussion.
+            Whether you&apos;re looking to improve revenue cycle performance, reduce operational inefficiencies, strengthen data visibility, or explore AI-enabled healthcare solutions, Momentia IO is ready to help.
           </motion.p>
         </motion.div>
 
@@ -159,10 +167,10 @@ export function Contact() {
             {/* Trust statement */}
               <p className="text-sm leading-relaxed text-muted-foreground">
                 <span className="font-semibold text-foreground">
-                  Enterprise-grade confidentiality.
+                  HIPAA-aware &amp; confidential.
                 </span>{' '}
-                All communications are protected. We treat every inquiry with
-                strict professional discretion.
+                We treat every inquiry with strict professional discretion and
+                handle organizational details with the care healthcare demands.
               </p>
           </motion.div>
 
@@ -193,8 +201,8 @@ export function Contact() {
                     Message Sent!
                   </h3>
                   <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
-                    Thank you for reaching out. Our security team will respond
-                    within one business day.
+                    Thank you for reaching out. Our healthcare operations team
+                    will respond within one business day.
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
@@ -227,12 +235,12 @@ export function Contact() {
                     </div>
                     <div className="flex flex-col gap-1.5">
                       <label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                        Company *
+                        Organization *
                       </label>
                       <input
                         required
                         type="text"
-                        placeholder="Acme Corp"
+                        placeholder="Healthcare provider, group, or facility"
                         className={inputBase}
                       />
                     </div>
@@ -246,13 +254,13 @@ export function Contact() {
                       <input
                         required
                         type="email"
-                        placeholder="jane@company.com"
+                        placeholder="jane@organization.com"
                         className={inputBase}
                       />
                     </div>
                     <div className="flex flex-col gap-1.5">
                       <label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                        Phone
+                        Phone Number
                       </label>
                       <input
                         type="tel"
@@ -264,12 +272,28 @@ export function Contact() {
 
                   <div className="flex flex-col gap-1.5">
                     <label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                      Area of Interest *
+                    </label>
+                    <select required defaultValue="" className={inputBase}>
+                      <option value="" disabled>
+                        Select an area of interest…
+                      </option>
+                      {AREAS_OF_INTEREST.map((area) => (
+                        <option key={area} value={area}>
+                          {area}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <div className="flex flex-col gap-1.5">
+                    <label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                       Message *
                     </label>
                     <textarea
                       required
                       rows={5}
-                      placeholder="Tell us about your security needs or challenges…"
+                      placeholder="Tell us about your goals — revenue cycle, denials, data visibility, AI automation, compliance…"
                       className={`${inputBase} resize-none`}
                     />
                   </div>
@@ -292,7 +316,7 @@ export function Contact() {
                       </>
                     ) : (
                       <>
-                        Send Message
+                        Schedule Your Consultation
                         <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                       </>
                     )}
@@ -301,10 +325,10 @@ export function Contact() {
                   <p className="text-center text-xs text-muted-foreground">
                     Or email us directly at{' '}
                     <a
-                      href="mailto:hello@momentia.com"
+                      href="mailto:info@momentia.io"
                       className="text-primary hover:underline underline-offset-4"
                     >
-                      hello@momentia.com
+                      info@momentia.io
                     </a>
                   </p>
                 </motion.form>

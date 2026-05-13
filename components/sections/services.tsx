@@ -3,7 +3,7 @@
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useScroll, useTransform } from 'framer-motion';
-import { Shield, Cloud, Lock, FileSearch, Users, Zap } from 'lucide-react';
+import { DollarSign, FileText, Brain, Database, ShieldCheck, Sparkles, HeartPulse } from 'lucide-react';
 import ElegantCarousel from '@/components/ui/elegant-carousel';
 import { GridCard } from '@/components/ui/grid-card';
 
@@ -12,46 +12,74 @@ const EASE_EXPO = [0.16, 1, 0.3, 1] as const;
 // Main service offerings for the grid section
 const MAIN_SERVICES = [
   {
-    icon: <Shield className="h-8 w-8 text-primary" />,
-    title: "Governance, Risk & Compliance",
-    subtitle: "GRC",
-    description: "Build sustainable security governance aligned with industry frameworks like ISO 27001, SOC 2, and NIST CSF.",
-    highlights: ["Security framework assessments", "Risk register development", "Audit readiness support", "Policy development"],
+    icon: <DollarSign className="h-8 w-8 text-primary" />,
+    title: "Medical Billing & Revenue Cycle",
+    subtitle: "End-to-end RCM",
+    description: "End-to-end revenue cycle services designed to optimize reimbursements and improve financial performance.",
+    highlights: [
+      "Claims submission",
+      "Payment posting",
+      "Denial management",
+      "Eligibility verification",
+      "Prior authorization support",
+      "Accounts receivable follow-up",
+      "Revenue cycle analytics",
+    ],
   },
   {
-    icon: <Cloud className="h-8 w-8 text-primary" />,
-    title: "Cloud Security",
-    subtitle: "Cloud Defense",
-    description: "Evaluate cloud environments to identify configuration weaknesses, identity risks, and monitoring gaps.",
-    highlights: ["Identity and access reviews", "Misconfiguration assessments", "CSPM findings analysis", "Security baselines"],
+    icon: <FileText className="h-8 w-8 text-primary" />,
+    title: "Medical Coding Services",
+    subtitle: "ICD-10 • CPT • HCPCS",
+    description: "Accurate and compliant coding that improves claim quality and reduces revenue leakage.",
+    highlights: [
+      "ICD-10, CPT, and HCPCS coding",
+      "Coding audits",
+      "Specialty coding support",
+      "Risk adjustment coding",
+      "Documentation improvement",
+      "Compliance reviews",
+    ],
   },
   {
-    icon: <Lock className="h-8 w-8 text-primary" />,
-    title: "Ransomware Readiness",
-    subtitle: "Threat Defense",
-    description: "Preparation determines survivability. Build defensive architecture that withstands ransomware attacks.",
-    highlights: ["Attack surface reduction", "Endpoint monitoring", "Privilege analysis", "Recovery validation"],
+    icon: <Brain className="h-8 w-8 text-primary" />,
+    title: "AI & Healthcare Automation",
+    subtitle: "Intelligent Operations",
+    description: "AI-enabled operational solutions that reduce administrative burden and improve efficiency.",
+    highlights: [
+      "AI-assisted denial prediction",
+      "Workflow automation",
+      "Predictive analytics",
+      "Intelligent reporting",
+      "AI operational assessments",
+      "Revenue cycle intelligence",
+    ],
   },
   {
-    icon: <FileSearch className="h-8 w-8 text-primary" />,
-    title: "Security Assessments",
-    subtitle: "Risk Evaluation",
-    description: "Comprehensive security evaluations translated into clear business risk insights and remediation priorities.",
-    highlights: ["Vulnerability assessments", "Penetration testing", "Risk analysis", "Remediation planning"],
+    icon: <Database className="h-8 w-8 text-primary" />,
+    title: "Healthcare Data Strategy",
+    subtitle: "Insight & Interoperability",
+    description: "Helping healthcare organizations transform fragmented data into actionable insight.",
+    highlights: [
+      "Dashboard development",
+      "KPI reporting",
+      "Predictive analytics",
+      "Data integration",
+      "Interoperability consulting",
+      "Operational reporting",
+    ],
   },
   {
-    icon: <Users className="h-8 w-8 text-primary" />,
-    title: "Identity & Access Management",
-    subtitle: "IAM",
-    description: "Strengthen identity governance and reduce exposure across Microsoft 365 and cloud environments.",
-    highlights: ["Identity governance", "Access controls", "Privilege management", "Authentication systems"],
-  },
-  {
-    icon: <Zap className="h-8 w-8 text-primary" />,
-    title: "Incident Response",
-    subtitle: "Crisis Management",
-    description: "Expert-led containment and recovery from security incidents with 24/7 availability when it matters most.",
-    highlights: ["Incident containment", "Forensic analysis", "Recovery procedures", "Post-incident analysis"],
+    icon: <ShieldCheck className="h-8 w-8 text-primary" />,
+    title: "Cybersecurity & Compliance",
+    subtitle: "HIPAA & Vendor Risk",
+    description: "Practical security and compliance strategies tailored for healthcare environments.",
+    highlights: [
+      "HIPAA security assessments",
+      "Vendor risk analysis",
+      "Cybersecurity readiness",
+      "Identity & access advisory",
+      "Security awareness support",
+    ],
   },
 ];
 
@@ -163,7 +191,7 @@ export function Services() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <Shield className="h-3.5 w-3.5" aria-hidden />
+              <HeartPulse className="h-3.5 w-3.5" aria-hidden />
               Services
             </motion.span>
 
@@ -174,7 +202,7 @@ export function Services() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              Services
+              What We Do
             </motion.h3>
 
             <motion.div
@@ -241,8 +269,53 @@ export function Services() {
           </div>
         </motion.div>
 
+        {/* AI Positioning Banner */}
+        <motion.div
+          className="mb-16 rounded-3xl border border-border/50 bg-card/40 p-8 backdrop-blur-sm md:p-12"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.7, ease: EASE_EXPO }}
+        >
+          <div className="grid gap-8 md:grid-cols-[auto_1fr] md:items-start md:gap-10">
+            <div
+              className="flex h-14 w-14 items-center justify-center rounded-2xl ring-1 ring-primary/20"
+              style={{ backgroundColor: "color-mix(in oklab, var(--primary) 12%, transparent)" }}
+            >
+              <Brain className="h-7 w-7 text-primary" aria-hidden />
+            </div>
+            <div className="flex flex-col gap-4">
+              <span className="text-xs font-semibold uppercase tracking-[0.28em] text-primary">
+                AI Positioning
+              </span>
+              <h3 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl md:text-4xl">
+                Practical AI for Healthcare Operations
+              </h3>
+              <p className="text-base leading-relaxed text-muted-foreground">
+                We believe AI should create measurable operational value — not complexity. Momentia IO helps healthcare organizations safely implement AI-enabled solutions with a focus on practical implementation, compliance awareness, and real operational improvement.
+              </p>
+              <ul className="mt-2 grid gap-2 text-sm text-muted-foreground sm:grid-cols-2">
+                {[
+                  "Revenue cycle optimization",
+                  "Predictive analytics",
+                  "Operational automation",
+                  "Workflow efficiency",
+                  "Reporting & insights",
+                  "Administrative burden reduction",
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-2">
+                    <span className="h-1.5 w-1.5 rounded-full bg-primary/70" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </motion.div>
+
         {/* Section Divider */}
         <motion.div
+          id="industries"
           className="mb-16 flex items-center justify-center"
           initial={{ opacity: 0, scaleX: 0 }}
           whileInView={{ opacity: 1, scaleX: 1 }}
@@ -252,7 +325,7 @@ export function Services() {
           <div className="h-px w-full max-w-md bg-gradient-to-r from-transparent via-border to-transparent" />
         </motion.div>
 
-        {/* What We Help Organizations Do Section */}
+        {/* Industries Served */}
         <motion.div
           ref={outcomesRef}
           className="mb-12 flex flex-col items-center text-center"
@@ -268,8 +341,8 @@ export function Services() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <Shield className="h-3.5 w-3.5" aria-hidden />
-            Outcomes
+            <Sparkles className="h-3.5 w-3.5" aria-hidden />
+            Industries Served
           </motion.span>
 
           <motion.h3
@@ -279,7 +352,7 @@ export function Services() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            What We Help Organizations Do
+            Healthcare Organizations We Support
           </motion.h3>
 
           <motion.div

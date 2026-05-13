@@ -10,18 +10,18 @@ import {
   type Variants,
 } from "framer-motion";
 import {
+  Activity,
   ArrowRight,
-  Award,
-  Clock,
-  Cloud,
-  FileCheck,
-  KeyRound,
-  Lock,
-  Search,
-  ShieldAlert,
-  ShieldCheck,
+  BarChart3,
+  Brain,
+  DollarSign,
+  Eye,
+  HeartPulse,
+  LineChart,
+  Stethoscope,
+  TrendingUp,
   Users,
-  Zap,
+  Workflow,
 } from "lucide-react";
 import { type ReactNode, useEffect, useRef } from "react";
 
@@ -49,54 +49,54 @@ interface StatItem {
 
 const SERVICES: ServiceItem[] = [
   {
-    icon: <Cloud className="w-5 h-5" />,
-    title: "Compromised credentials",
+    icon: <DollarSign className="w-5 h-5" />,
+    title: "Increase reimbursements",
     description:
-      "Weak passwords, reused accounts, and unmonitored access create entry points for attackers.",
+      "Optimize claim quality and coding accuracy to recover revenue that's currently slipping through the cracks.",
     side: "left",
   },
   {
-    icon: <ShieldCheck className="w-5 h-5" />,
-    title: "Cloud misconfigurations",
+    icon: <TrendingUp className="w-5 h-5" />,
+    title: "Reduce claim denials",
     description:
-      "Incorrect settings in cloud platforms expose sensitive data and create unauthorized access paths.",
+      "AI-assisted denial prediction and proactive workflows that catch issues before claims are submitted.",
     side: "left",
   },
   {
-    icon: <ShieldAlert className="w-5 h-5" />,
-    title: "Weak monitoring visibility",
+    icon: <Workflow className="w-5 h-5" />,
+    title: "Improve workflow efficiency",
     description:
-      "Blind spots in security monitoring allow threats to go undetected until significant damage occurs.",
+      "Automate administrative burden so clinical and operations teams focus on what matters most.",
     side: "left",
   },
   {
-    icon: <Search className="w-5 h-5" />,
-    title: "Excessive permissions",
+    icon: <Eye className="w-5 h-5" />,
+    title: "Strengthen data visibility",
     description:
-      "Over-privileged user accounts create unnecessary risk and expand potential attack surfaces.",
+      "Turn fragmented healthcare data into dashboards, KPI reporting, and decision-ready insight.",
     side: "right",
   },
   {
-    icon: <Zap className="w-5 h-5" />,
-    title: "Untested recovery procedures",
+    icon: <Activity className="w-5 h-5" />,
+    title: "Enhance operational performance",
     description:
-      "Backup and recovery plans that haven't been validated often fail when you need them most.",
+      "Measurable improvements across revenue cycle, scheduling, prior authorization, and AR follow-up.",
     side: "right",
   },
   {
-    icon: <Lock className="w-5 h-5" />,
-    title: "Small security gaps",
+    icon: <HeartPulse className="w-5 h-5" />,
+    title: "Modernize healthcare systems",
     description:
-      "Minor exposures that compound over time to create significant vulnerabilities in your infrastructure.",
+      "Practical, scalable modernization that delivers value without overwhelming your internal teams.",
     side: "right",
   },
 ];
 
 const STATS: StatItem[] = [
-  { icon: <Users className="w-5 h-5" />, value: 200, suffix: "+", label: "Organisations Secured" },
-  { icon: <Award className="w-5 h-5" />, value: 100, suffix: "%", label: "Client Retention" },
-  { icon: <Clock className="w-5 h-5" />, value: 48, prefix: "<", suffix: "hr", label: "Incident Response" },
-  { icon: <FileCheck className="w-5 h-5" />, value: 50, suffix: "+", label: "Compliance Standards" },
+  { icon: <Stethoscope className="w-5 h-5" />, value: 150, suffix: "+", label: "Providers Supported" },
+  { icon: <TrendingUp className="w-5 h-5" />, value: 35, suffix: "%", label: "Avg Denial Reduction" },
+  { icon: <DollarSign className="w-5 h-5" />, value: 22, suffix: "%", label: "Reimbursement Uplift" },
+  { icon: <LineChart className="w-5 h-5" />, value: 98, suffix: "%", label: "Coding Accuracy" },
 ];
 
 // ─── Framer variants ─────────────────────────────────────────────────────────
@@ -384,12 +384,12 @@ export function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <ShieldAlert className="h-3 w-3 sm:h-3.5 sm:w-3.5" aria-hidden />
-            Modern Risk
+            <HeartPulse className="h-3 w-3 sm:h-3.5 sm:w-3.5" aria-hidden />
+            About Momentia IO
           </motion.span>
 
           <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl sm:mb-5">
-            The Reality of Modern Risk
+            Healthcare Operations Built for the Future
           </h2>
 
           {/* Animated underline */}
@@ -402,10 +402,10 @@ export function About() {
           />
 
           <p className="max-w-2xl text-base leading-relaxed text-muted-foreground mb-3 sm:text-lg sm:mb-4">
-            Cyber incidents rarely start with advanced attacks.
+            We combine healthcare expertise with AI-driven operational strategies.
           </p>
           <p className="max-w-2xl text-base font-semibold leading-relaxed text-muted-foreground sm:text-lg">
-            They begin with small gaps:
+            Here&apos;s how we help providers:
           </p>
         </motion.div>
 
@@ -459,8 +459,8 @@ export function About() {
                 whileHover={{ scale: 1.02, transition: { duration: 0.35 } }}
               >
                 <img
-                  src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&auto=format&fit=crop&q=80"
-                  alt="Momentia security team"
+                  src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&auto=format&fit=crop&q=80"
+                  alt="Momentia IO healthcare operations team"
                   className="h-full w-full object-cover"
                   style={{ aspectRatio: "3/4" }}
                 />

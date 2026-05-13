@@ -29,9 +29,9 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Momentia — Cybersecurity & GRC Consulting",
+  title: "Momentia IO — Healthcare AI, Revenue Cycle & Data Strategy",
   description:
-    "Enterprise-grade cybersecurity consulting. We help organizations manage risk, achieve compliance, and defend against modern threats.",
+    "Modernizing healthcare operations through AI, revenue cycle management, and data strategy. We help providers improve financial performance, reduce denials, and streamline operations.",
   icons: {
     icon: "/favicon.svg",
   },

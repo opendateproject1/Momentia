@@ -4,14 +4,16 @@ import { motion } from "framer-motion";
 import { useRef } from "react";
 import { useScroll, useTransform } from "framer-motion";
 import {
-  Shield,
-  Cloud,
-  Lock,
-  Zap,
-  Bug,
-  Eye,
-  Network,
-  Check,
+  Brain,
+  DollarSign,
+  FileText,
+  Database,
+  ShieldCheck,
+  LineChart,
+  Workflow,
+  Sparkles,
+  Stethoscope,
+  HandHeart,
 } from "lucide-react";
 import { Radar, CapabilityIcon } from "@/components/ui/radar-effect";
 
@@ -19,39 +21,72 @@ const EASE_EXPO = [0.16, 1, 0.3, 1] as const;
 
 const capabilities = [
   {
-    icon: <Shield className="h-6 w-6 text-primary" />,
-    text: "Cloud & Identity Security",
+    icon: <Brain className="h-6 w-6 text-primary" />,
+    text: "AI & Automation",
     delay: 0.2,
   },
   {
-    icon: <Cloud className="h-6 w-6 text-primary" />,
-    text: "Endpoint Threat Defense",
+    icon: <DollarSign className="h-6 w-6 text-primary" />,
+    text: "Revenue Cycle Mgmt",
     delay: 0.3,
   },
   {
-    icon: <Lock className="h-6 w-6 text-primary" />,
-    text: "Resilient Backup Architecture",
+    icon: <FileText className="h-6 w-6 text-primary" />,
+    text: "Medical Coding",
     delay: 0.4,
   },
   {
-    icon: <Network className="h-6 w-6 text-primary" />,
-    text: "Executive Risk Assessments",
+    icon: <Database className="h-6 w-6 text-primary" />,
+    text: "Data Strategy",
     delay: 0.5,
   },
   {
-    icon: <Zap className="h-6 w-6 text-primary" />,
-    text: "Identity Governance",
+    icon: <ShieldCheck className="h-6 w-6 text-primary" />,
+    text: "HIPAA Compliance",
     delay: 0.6,
   },
   {
-    icon: <Eye className="h-6 w-6 text-primary" />,
-    text: "Cloud Configuration",
+    icon: <LineChart className="h-6 w-6 text-primary" />,
+    text: "Predictive Analytics",
     delay: 0.7,
   },
   {
-    icon: <Bug className="h-6 w-6 text-primary" />,
-    text: "Monitoring Visibility",
+    icon: <Workflow className="h-6 w-6 text-primary" />,
+    text: "Workflow Automation",
     delay: 0.8,
+  },
+];
+
+const WHY_REASONS = [
+  {
+    icon: <Stethoscope className="h-5 w-5 text-primary" />,
+    title: "Healthcare-Focused Expertise",
+    description:
+      "We understand healthcare operations, reimbursement workflows, compliance requirements, and the challenges providers face every day.",
+  },
+  {
+    icon: <Sparkles className="h-5 w-5 text-primary" />,
+    title: "AI-Enabled Operational Efficiency",
+    description:
+      "We help organizations leverage AI responsibly to reduce manual work and improve operational performance.",
+  },
+  {
+    icon: <DollarSign className="h-5 w-5 text-primary" />,
+    title: "Revenue-Driven Approach",
+    description:
+      "Our solutions are designed to improve cash flow, reduce denials, and strengthen long-term financial performance.",
+  },
+  {
+    icon: <Workflow className="h-5 w-5 text-primary" />,
+    title: "Practical Modernization",
+    description:
+      "We focus on scalable solutions that create measurable value without overwhelming internal teams.",
+  },
+  {
+    icon: <HandHeart className="h-5 w-5 text-primary" />,
+    title: "Rural Healthcare Understanding",
+    description:
+      "We understand the unique operational and financial pressures facing rural healthcare organizations and underserved communities.",
   },
 ];
 
@@ -90,7 +125,7 @@ export function Capabilities() {
       ref={sectionRef}
       id="capabilities"
       className="relative w-full overflow-hidden py-12 md:py-16 lg:py-20"
-      aria-label="Security Capabilities"
+      aria-label="Healthcare Capabilities"
     >
       {/* Ambient orbs */}
       <motion.div
@@ -118,7 +153,7 @@ export function Capabilities() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Capabilities
+            Healthcare Capabilities
           </motion.h2>
 
           <motion.div
@@ -136,7 +171,7 @@ export function Capabilities() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.5 }}
           >
-            Comprehensive cybersecurity capabilities designed to protect your organization from evolving threats.
+            A unified operating model spanning AI, revenue cycle, coding, data strategy, and compliance — built for modern healthcare providers.
           </motion.p>
         </motion.div>
 
@@ -222,17 +257,57 @@ export function Capabilities() {
           </div>
         </motion.div>
 
-        {/* Bottom description */}
+        {/* Why Momentia IO */}
         <motion.div
-          className="mt-12 max-w-4xl mx-auto text-center sm:mt-16 lg:mt-20"
+          className="mt-16 sm:mt-20 lg:mt-24"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.6 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <p className="text-xs text-muted-foreground sm:text-sm">
-            Each capability is designed to provide comprehensive protection while integrating seamlessly with your existing security infrastructure.
-          </p>
+          <div className="mb-10 flex flex-col items-center text-center">
+            <span className="mb-3 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.28em] text-primary">
+              <Sparkles className="h-3.5 w-3.5" aria-hidden />
+              Why Momentia IO
+            </span>
+            <h3 className="mb-4 text-2xl font-bold tracking-tight text-foreground sm:text-3xl md:text-4xl">
+              Why Healthcare Organizations Choose Momentia IO
+            </h3>
+            <motion.div
+              className="h-[2px] rounded-full bg-primary sm:h-[3px]"
+              initial={{ width: 0 }}
+              whileInView={{ width: 60 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9, delay: 0.3, ease: EASE_EXPO }}
+            />
+          </div>
+
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {WHY_REASONS.map((reason, idx) => (
+              <motion.div
+                key={reason.title}
+                className="group relative flex flex-col gap-3 rounded-2xl border border-border/50 bg-card/40 p-5 backdrop-blur-sm transition-all duration-300 hover:border-primary/40 hover:bg-card/70 hover:shadow-md hover:shadow-primary/[0.06] sm:p-6"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.5, delay: idx * 0.08, ease: EASE_EXPO }}
+                whileHover={{ y: -4 }}
+              >
+                <div
+                  className="flex h-10 w-10 items-center justify-center rounded-lg ring-1 ring-primary/20"
+                  style={{ backgroundColor: "color-mix(in oklab, var(--primary) 10%, transparent)" }}
+                >
+                  {reason.icon}
+                </div>
+                <h4 className="text-base font-semibold tracking-tight text-foreground transition-colors duration-200 group-hover:text-primary sm:text-lg">
+                  {reason.title}
+                </h4>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  {reason.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>
