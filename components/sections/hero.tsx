@@ -327,9 +327,9 @@ export function Hero() {
             variants={fadeUp}
             className="mb-5 text-2xl font-bold tracking-tight text-foreground sm:mb-7 sm:text-3xl md:text-5xl lg:text-6xl leading-tight sm:leading-tight md:leading-[1.2] lg:leading-[1.15]"
           >
-            Modernizing Healthcare Operations Through{" "}
+            Modernizing Healthcare Organizations with{" "}
             <span className="bg-gradient-to-r from-primary via-primary/75 to-accent bg-clip-text text-transparent">
-              AI, Revenue Cycle &amp; Data Strategy
+              AI-Driven Operational Transformation and Revenue Cycle Optimization
             </span>
           </motion.h1>
 
@@ -338,9 +338,10 @@ export function Hero() {
             variants={fadeUp}
             className="mx-auto mb-6 max-w-2xl text-base leading-relaxed text-foreground/58 sm:mb-8 sm:text-lg md:text-xl lg:mb-11"
           >
-            We help healthcare organizations improve financial performance,
-            streamline operations, strengthen revenue cycle management, and
-            deliver healthcare data solutions.
+            Momentia IO helps healthcare organizations improve operational
+            visibility, reduce administrative burden, strengthen revenue cycle
+            performance, and support smarter decision-making through automation,
+            analytics, and healthcare-focused technology solutions.
           </motion.p>
 
           {/* CTAs */}
@@ -358,7 +359,7 @@ export function Hero() {
             />
             <InteractiveHoverButton
               href="/#contact"
-              text="Request a Cybersecurity and Compliance Assessment"
+              text="Get a HIPAA Security Assessment"
             />
           </motion.div>
         </motion.div>

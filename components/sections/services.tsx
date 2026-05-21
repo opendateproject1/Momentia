@@ -13,7 +13,7 @@ const EASE_EXPO = [0.16, 1, 0.3, 1] as const;
 const MAIN_SERVICES = [
   {
     icon: <DollarSign className="h-8 w-8 text-primary" />,
-    title: "Medical Billing & Revenue Cycle",
+    title: "Medical Billing & End-to-End Revenue Cycle Management",
     subtitle: "End-to-end RCM",
     description: "End-to-end revenue cycle services designed to optimize reimbursements and improve financial performance.",
     highlights: [
@@ -28,16 +28,16 @@ const MAIN_SERVICES = [
   },
   {
     icon: <FileText className="h-8 w-8 text-primary" />,
-    title: "Medical Coding Services",
-    subtitle: "ICD-10 • CPT • HCPCS",
-    description: "Accurate and compliant coding that improves claim quality and reduces revenue leakage.",
+    title: "EHR Integration Solutions",
+    subtitle: "Secure Data Exchange",
+    description: "Modern healthcare integrations that connect EHRs, EDI workflows, payer systems, and healthcare applications through secure data exchange.",
     highlights: [
-      "ICD-10, CPT, and HCPCS coding",
-      "Coding audits",
-      "Specialty coding support",
-      "Risk adjustment coding",
-      "Documentation improvement",
-      "Compliance reviews",
+      "EHR integrations",
+      "EDI workflow connectivity",
+      "Payer system integration",
+      "Healthcare application interoperability",
+      "Secure data exchange",
+      "HL7 / FHIR support",
     ],
   },
   {
@@ -344,16 +344,6 @@ export function Services() {
             <Sparkles className="h-3.5 w-3.5" aria-hidden />
             Industries Served
           </motion.span>
-
-          <motion.h3
-            className="mb-5 text-4xl font-bold tracking-tight text-foreground md:text-5xl"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            Healthcare Organizations We Support
-          </motion.h3>
 
           <motion.div
             className="mb-7 h-[2px] rounded-full bg-primary"

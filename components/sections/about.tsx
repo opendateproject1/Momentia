@@ -477,13 +477,13 @@ export function About() {
                   transition={{ duration: 0.7, delay: 0.6 }}
                 >
                   <motion.a
-                    href="/#capabilities"
+                    href="/#services"
                     className="flex items-center gap-2 rounded-full bg-background/90 px-4 py-2 text-sm font-semibold text-foreground backdrop-blur-sm"
                     whileHover={{ scale: 1.06 }}
                     whileTap={{ scale: 0.97 }}
                     transition={{ type: "spring", stiffness: 400, damping: 22 }}
                   >
-                    Our Capabilities <ArrowRight className="h-3.5 w-3.5" />
+                    Our Services <ArrowRight className="h-3.5 w-3.5" />
                   </motion.a>
                 </motion.div>
               </motion.div>

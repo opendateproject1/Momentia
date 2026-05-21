@@ -13,7 +13,6 @@ const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'Services', href: '/#services' },
   { label: 'Industries', href: '/#industries' },
-  { label: 'Blog', href: '/blog' },
   { label: 'Contact', href: '/#contact' },
 ]
 
@@ -91,8 +90,8 @@ export function Footer() {
               <span className="text-lg font-bold text-foreground">Momentia IO</span>
             </Link>
             <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
-              Healthcare AI • Revenue Cycle Management • Medical Billing &amp;
-              Coding • Data Strategy • Operational Modernization.
+              Healthcare AI • Revenue Cycle Management • EHR Integration •
+              Data Strategy • Operational Modernization.
             </p>
             <a
               href="mailto:info@momentia.io"
@@ -194,7 +193,7 @@ export function Footer() {
             <div className="flex flex-col gap-2">
               {[
                 { label: 'Medical Billing & RCM', href: '/#services' },
-                { label: 'Medical Coding', href: '/#services' },
+                { label: 'EHR Integration Solutions', href: '/#services' },
                 { label: 'AI & Healthcare Automation', href: '/#services' },
                 { label: 'Healthcare Data Strategy', href: '/#services' },
                 { label: 'Cybersecurity & Compliance', href: '/#services' },

@@ -55,7 +55,7 @@ const slides: SlideData[] = [
       'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwwUAxUTAwsTBhYTB9kYFhYaHx8aHh8ZIB4cIB4eHSMpJSUnKi4tMzM1NTc5OT3/2wBDAQICAgMDAwYDAwYMCAcIDAwwMjAxMjAxNDc1Nzc3NTU5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OT/wAARCAApACgDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8VAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCwAA8A/9k=',
   },
   {
-    title: 'Behavioral Health & Multi-Location Practices',
+    title: 'Behavioral Health',
     subtitle: 'Distributed Care Delivery',
     description:
       'Unified data, billing, and reporting across distributed locations — so leadership has a single source of operational truth.',

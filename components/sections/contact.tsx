@@ -14,8 +14,8 @@ const contactDetails = [
 ]
 
 const AREAS_OF_INTEREST = [
-  'Medical Billing & Revenue Cycle',
-  'Medical Coding',
+  'Medical Billing & End-to-End Revenue Cycle Management',
+  'EHR Integration Solutions',
   'AI & Healthcare Automation',
   'Healthcare Data Strategy',
   'Cybersecurity & Compliance',
@@ -107,7 +107,7 @@ export function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Let&apos;s Modernize Healthcare Operations Together
+            Let&apos;s Connect
           </motion.h2>
 
           <motion.div
