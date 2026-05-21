@@ -1,10 +1,7 @@
 "use client";
 
 import {
-  animate,
   motion,
-  useInView,
-  useMotionValue,
   useScroll,
   useTransform,
   type Variants,
@@ -12,20 +9,14 @@ import {
 import {
   Activity,
   ArrowRight,
-  BarChart3,
-  Brain,
   DollarSign,
   Eye,
   HeartPulse,
-  LineChart,
-  Stethoscope,
   TrendingUp,
-  Users,
   Workflow,
 } from "lucide-react";
-import { type ReactNode, useEffect, useRef } from "react";
+import { type ReactNode, useRef } from "react";
 
-import { Button } from "@/components/ui/button";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -36,14 +27,6 @@ interface ServiceItem {
   side: "left" | "right";
 }
 
-interface StatItem {
-  icon: ReactNode;
-  value: number;
-  prefix?: string;
-  suffix: string;
-  decimals?: number;
-  label: string;
-}
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
@@ -92,12 +75,6 @@ const SERVICES: ServiceItem[] = [
   },
 ];
 
-const STATS: StatItem[] = [
-  { icon: <Stethoscope className="w-5 h-5" />, value: 150, suffix: "+", label: "Providers Supported" },
-  { icon: <TrendingUp className="w-5 h-5" />, value: 35, suffix: "%", label: "Avg Denial Reduction" },
-  { icon: <DollarSign className="w-5 h-5" />, value: 22, suffix: "%", label: "Reimbursement Uplift" },
-  { icon: <LineChart className="w-5 h-5" />, value: 98, suffix: "%", label: "Coding Accuracy" },
-];
 
 // ─── Framer variants ─────────────────────────────────────────────────────────
 
@@ -137,108 +114,6 @@ const stagger: Variants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.12, delayChildren: 0.05 } },
 };
-
-const statsContainer: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1, delayChildren: 0.1 },
-  },
-};
-
-const statCard: Variants = {
-  hidden: { opacity: 0, y: 24, scale: 0.96 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: { duration: 0.6, ease: EASE_EXPO },
-  },
-};
-
-// ─── Counter ──────────────────────────────────────────────────────────────────
-
-function Counter({
-  value,
-  prefix = "",
-  suffix = "",
-  decimals = 0,
-}: {
-  value: number;
-  prefix?: string;
-  suffix?: string;
-  decimals?: number;
-}) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-50px 0px" });
-  const motionVal = useMotionValue(0);
-  const display = useTransform(motionVal, (v) => v.toFixed(decimals));
-
-  useEffect(() => {
-    if (!inView) return;
-    const ctrl = animate(motionVal, value, {
-      duration: 1.8,
-      ease: [0.16, 1, 0.3, 1],
-    });
-    return ctrl.stop;
-  }, [inView, value, motionVal]);
-
-  return (
-    <span ref={ref} className="tabular-nums">
-      {prefix}
-      <motion.span>{display}</motion.span>
-      {suffix}
-    </span>
-  );
-}
-
-// ─── Stat card ────────────────────────────────────────────────────────────────
-
-function StatCard({ icon, value, prefix, suffix, decimals, label }: StatItem) {
-  return (
-    <motion.div
-      variants={statCard}
-      whileHover={{ y: -4, transition: { type: "spring", stiffness: 380, damping: 24 } }}
-      className="group relative flex flex-col items-center gap-1.5 p-4 text-center sm:gap-2 sm:p-6"
-    >
-      {/* Top accent */}
-      <motion.div
-        className="absolute left-1/2 top-0 h-[2px] w-6 -translate-x-1/2 rounded-full bg-primary sm:w-8"
-        initial={{ scaleX: 0, opacity: 0 }}
-        whileInView={{ scaleX: 1, opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.3 }}
-      />
-
-      {/* Icon circle */}
-      <motion.div
-        className="flex h-10 w-10 items-center justify-center rounded-full text-primary sm:h-12 sm:w-12"
-        style={{ backgroundColor: "color-mix(in oklab, var(--primary) 10%, transparent)" }}
-        whileHover={{ rotate: 360, transition: { duration: 0.7 } }}
-      >
-        {icon}
-      </motion.div>
-
-      {/* Number */}
-      <div className="text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl">
-        <Counter value={value} prefix={prefix} suffix={suffix} decimals={decimals} />
-      </div>
-
-      {/* Label */}
-      <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-muted-foreground sm:text-xs sm:tracking-[0.18em]">
-        {label}
-      </p>
-
-      {/* Underline */}
-      <motion.div
-        className="h-px bg-primary/40"
-        initial={{ width: "1rem" }}
-        whileHover={{ width: "2.5rem" }}
-        transition={{ duration: 0.3 }}
-      />
-    </motion.div>
-  );
-}
 
 // ─── Service item ─────────────────────────────────────────────────────────────
 
@@ -314,8 +189,6 @@ export function About() {
   const servicesOpacity = useTransform(contentProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0.7]);
 
   // Stats section animations
-  const statsY = useTransform(contentProgress, [0.65, 0.85], [60, 0]);
-  const statsOpacity = useTransform(contentProgress, [0.65, 0.8], [0, 1]);
 
   // Rotation animations for service cards with smoother bidirectional behavior
   const leftServiceRotation = useTransform(contentProgress, [0, 0.3, 0.7, 1], [-2, 0, 0, 1]);
@@ -518,23 +391,6 @@ export function About() {
             ))}
           </motion.div>
         </div>
-
-          {/* ── Stats (replaces kpis.tsx) ── */}
-        <motion.div
-          className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 sm:mt-14 lg:mt-16 sm:gap-5"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-40px" }}
-          variants={statsContainer}
-          style={{
-            y: statsY,
-            opacity: statsOpacity,
-          }}
-        >
-          {STATS.map((stat) => (
-            <StatCard key={stat.label} {...stat} />
-          ))}
-        </motion.div>
 
       </div>
     </section>

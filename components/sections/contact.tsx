@@ -1,16 +1,17 @@
 'use client'
 
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useScroll, useTransform } from 'framer-motion'
-import { Mail, MapPin, Phone, ArrowRight, CheckCircle, HeartPulse } from 'lucide-react'
+import { Mail, MapPin, ArrowRight, CheckCircle, HeartPulse } from 'lucide-react'
 
 const EASE_EXPO = [0.16, 1, 0.3, 1] as const
 
+const CONTACT_EMAIL = 'info@momentia.io'
+
 const contactDetails = [
-  { icon: Mail, label: 'Email', value: 'info@momentia.io', href: 'mailto:info@momentia.io' },
-  { icon: Phone, label: 'Phone', value: '+1 (555) 000-0000', href: 'tel:+15550000000' },
-  { icon: MapPin, label: 'Website', value: 'momentia.io', href: '#' },
+  { icon: Mail, label: 'Email', value: CONTACT_EMAIL, href: `mailto:${CONTACT_EMAIL}` },
+  { icon: MapPin, label: 'Website', value: 'momentia.io', href: 'https://www.momentia.io' },
 ]
 
 const AREAS_OF_INTEREST = [
@@ -30,6 +31,21 @@ export function Contact() {
   const contentRef = useRef<HTMLDivElement>(null)
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [interest, setInterest] = useState<string>('')
+
+  useEffect(() => {
+    const stored = sessionStorage.getItem('momentia:interest')
+    if (stored) {
+      setInterest(stored)
+      sessionStorage.removeItem('momentia:interest')
+    }
+    const handler = (e: Event) => {
+      const detail = (e as CustomEvent<string>).detail
+      if (detail) setInterest(detail)
+    }
+    window.addEventListener('momentia:interest', handler)
+    return () => window.removeEventListener('momentia:interest', handler)
+  }, [])
 
   const { scrollYProgress: sectionProgress } = useScroll({
     target: sectionRef,
@@ -55,10 +71,33 @@ export function Contact() {
   const orb1Y = useTransform(sectionProgress, [0, 0.5, 1], [0, -70, -140])
   const orb2Y = useTransform(sectionProgress, [0, 0.5, 1], [0, 70, 140])
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setLoading(true)
-    await new Promise((r) => setTimeout(r, 1200))
+
+    const formEl = e.currentTarget
+    const data = new FormData(formEl)
+    const name = (data.get('name') as string) ?? ''
+    const organization = (data.get('organization') as string) ?? ''
+    const email = (data.get('email') as string) ?? ''
+    const phone = (data.get('phone') as string) ?? ''
+    const area = (data.get('area') as string) ?? ''
+    const message = (data.get('message') as string) ?? ''
+
+    const subject = `Inquiry — ${area || 'General Inquiry'}`
+    const body = [
+      `Name: ${name}`,
+      `Organization: ${organization}`,
+      `Email: ${email}`,
+      `Phone: ${phone || '—'}`,
+      `Area of Interest: ${area}`,
+      '',
+      'Message:',
+      message,
+    ].join('\n')
+
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+
     setLoading(false)
     setSubmitted(true)
   }
@@ -228,6 +267,7 @@ export function Contact() {
                       </label>
                       <input
                         required
+                        name="name"
                         type="text"
                         placeholder="Jane Smith"
                         className={inputBase}
@@ -239,6 +279,7 @@ export function Contact() {
                       </label>
                       <input
                         required
+                        name="organization"
                         type="text"
                         placeholder="Healthcare provider, group, or facility"
                         className={inputBase}
@@ -253,6 +294,7 @@ export function Contact() {
                       </label>
                       <input
                         required
+                        name="email"
                         type="email"
                         placeholder="jane@organization.com"
                         className={inputBase}
@@ -263,8 +305,9 @@ export function Contact() {
                         Phone Number
                       </label>
                       <input
+                        name="phone"
                         type="tel"
-                        placeholder="+1 (555) 000-0000"
+                        placeholder="Optional"
                         className={inputBase}
                       />
                     </div>
@@ -274,7 +317,13 @@ export function Contact() {
                     <label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                       Area of Interest *
                     </label>
-                    <select required defaultValue="" className={inputBase}>
+                    <select
+                      required
+                      name="area"
+                      value={interest}
+                      onChange={(e) => setInterest(e.target.value)}
+                      className={inputBase}
+                    >
                       <option value="" disabled>
                         Select an area of interest…
                       </option>
@@ -292,6 +341,7 @@ export function Contact() {
                     </label>
                     <textarea
                       required
+                      name="message"
                       rows={5}
                       placeholder="Tell us about your goals — revenue cycle, denials, data visibility, AI automation, compliance…"
                       className={`${inputBase} resize-none`}

@@ -352,14 +352,17 @@ export function Hero() {
             <InteractiveHoverButton
               href="/#contact"
               text="Schedule a Consultation"
+              interest="General Inquiry"
             />
             <InteractiveHoverButton
               href="/#contact"
               text="Request a Revenue Cycle Assessment"
+              interest="Medical Billing & End-to-End Revenue Cycle Management"
             />
             <InteractiveHoverButton
               href="/#contact"
               text="Get a HIPAA Security Assessment"
+              interest="Cybersecurity & Compliance"
             />
           </motion.div>
         </motion.div>

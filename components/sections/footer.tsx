@@ -1,9 +1,9 @@
 'use client'
 
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 import { motion } from 'framer-motion'
 import { useScroll, useTransform } from 'framer-motion'
-import { Mail, ArrowRight, Linkedin, Twitter, Github } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -16,21 +16,8 @@ const navLinks = [
   { label: 'Contact', href: '/#contact' },
 ]
 
-const legalLinks = [
-  { label: 'Privacy Policy', href: '#' },
-  { label: 'Terms of Service', href: '#' },
-  { label: 'Security', href: '#' },
-]
-
-const socialLinks = [
-  { icon: Linkedin, label: 'LinkedIn', href: '#' },
-  { icon: Twitter, label: 'Twitter', href: '#' },
-  { icon: Github, label: 'GitHub', href: '#' },
-]
-
 export function Footer() {
   const footerRef = useRef<HTMLElement>(null)
-  const [emailFocused, setEmailFocused] = useState(false)
 
   const { scrollYProgress } = useScroll({
     target: footerRef,
@@ -99,54 +86,25 @@ export function Footer() {
             >
               info@momentia.io
             </a>
-            {/* Social links */}
-            <div className="flex items-center gap-3 pt-2">
-              {socialLinks.map(({ icon: Icon, label, href }) => (
-                <motion.a
-                  key={label}
-                  href={href}
-                  aria-label={label}
-                  className="group flex h-9 w-9 items-center justify-center rounded-lg border border-border/40 bg-card/40 text-muted-foreground transition-all duration-300 hover:border-primary/40 hover:bg-primary/10 hover:text-primary"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Icon className="h-4 w-4" />
-                </motion.a>
-              ))}
-            </div>
           </motion.div>
 
-          {/* Newsletter signup */}
+          {/* Talk to us */}
           <motion.div className="flex flex-col gap-3" variants={itemVariants}>
             <h3 className="text-sm font-semibold text-foreground">
-              Healthcare Operations Insights
+              Ready to modernize your operations?
             </h3>
             <p className="text-xs text-muted-foreground">
-              Quarterly perspectives on revenue cycle, AI in healthcare, and operational modernization.
+              Reach out for a consultation, revenue cycle assessment, or HIPAA security review.
             </p>
-            <form className="flex gap-2">
-              <motion.input
-                type="email"
-                placeholder="your@email.com"
-                name="email"
-                onFocus={() => setEmailFocused(true)}
-                onBlur={() => setEmailFocused(false)}
-                className="flex-1 rounded-lg border border-border/60 bg-card/50 px-3.5 py-2.5 text-xs text-foreground placeholder:text-muted-foreground/50 outline-none backdrop-blur-sm transition-all duration-200 focus:border-primary/60 focus:bg-card focus:ring-2 focus:ring-primary/10"
-                animate={{
-                  boxShadow: emailFocused
-                    ? '0 0 0 3px var(--primary / 0.1)'
-                    : 'none',
-                }}
-              />
-              <motion.button
-                type="submit"
-                className="flex items-center justify-center rounded-lg bg-primary px-3.5 text-white transition-all duration-300 hover:bg-primary/90 active:scale-95"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <ArrowRight className="h-4 w-4" />
-              </motion.button>
-            </form>
+            <motion.a
+              href="/#contact"
+              className="mt-1 inline-flex w-fit items-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-xs font-semibold text-white transition-all duration-300 hover:bg-primary/90"
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.96 }}
+            >
+              Schedule a Consultation
+              <ArrowRight className="h-3.5 w-3.5" />
+            </motion.a>
           </motion.div>
         </motion.div>
 
@@ -161,7 +119,7 @@ export function Footer() {
 
         {/* Bottom section — links */}
         <motion.div
-          className="grid gap-8 md:grid-cols-3 lg:gap-12"
+          className="grid gap-8 md:grid-cols-2 lg:gap-12"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -198,24 +156,6 @@ export function Footer() {
                 { label: 'Healthcare Data Strategy', href: '/#services' },
                 { label: 'Cybersecurity & Compliance', href: '/#services' },
               ].map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="group w-fit text-sm text-muted-foreground transition-colors duration-200 hover:text-primary"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Legal & Info */}
-          <motion.div className="flex flex-col gap-3" variants={itemVariants}>
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-              Legal
-            </h4>
-            <div className="flex flex-col gap-2">
-              {legalLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}

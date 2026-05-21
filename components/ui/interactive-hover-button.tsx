@@ -6,21 +6,26 @@ interface InteractiveHoverButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   text?: string;
   href?: string;
+  interest?: string;
 }
 
 const InteractiveHoverButton = React.forwardRef<
   HTMLButtonElement,
   InteractiveHoverButtonProps
->(({ text = "Button", className, href, onClick, ...props }, ref) => {
+>(({ text = "Button", className, href, interest, onClick, ...props }, ref) => {
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    if (interest && typeof window !== "undefined") {
+      sessionStorage.setItem("momentia:interest", interest);
+      window.dispatchEvent(new CustomEvent("momentia:interest", { detail: interest }));
+    }
     if (href) {
-      // Smooth scroll to section if it's a hash link
-      if (href.startsWith('#')) {
+      const hashIndex = href.indexOf("#");
+      if (hashIndex !== -1) {
         e.preventDefault();
-        const element = document.querySelector(href);
-        element?.scrollIntoView({ behavior: 'smooth' });
+        const hash = href.slice(hashIndex);
+        const element = document.querySelector(hash);
+        element?.scrollIntoView({ behavior: "smooth" });
       } else {
-        // Navigate to external URL
         window.location.href = href;
       }
     }

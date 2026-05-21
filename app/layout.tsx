@@ -28,13 +28,40 @@ export const viewport: Viewport = {
   maximumScale: 1,
 };
 
+const SITE_TITLE =
+  "Momentia IO — AI-Driven Healthcare Operations & Revenue Cycle Optimization";
+const SITE_DESCRIPTION =
+  "Momentia IO helps healthcare organizations improve operational visibility, reduce administrative burden, strengthen revenue cycle performance, and support smarter decision-making through automation, analytics, and healthcare-focused technology solutions.";
+
 export const metadata: Metadata = {
-  title: "Momentia IO — Healthcare AI, Revenue Cycle & Data Strategy",
-  description:
-    "Modernizing healthcare operations through AI, revenue cycle management, and data strategy. We help providers improve financial performance, reduce denials, and streamline operations.",
+  title: SITE_TITLE,
+  description: SITE_DESCRIPTION,
   icons: {
     icon: "/favicon.svg",
   },
+  keywords: [
+    "healthcare AI",
+    "revenue cycle management",
+    "medical billing",
+    "EHR integration",
+    "healthcare data strategy",
+    "HIPAA",
+    "healthcare automation",
+    "RCM",
+  ],
+  openGraph: {
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    type: "website",
+    siteName: "Momentia IO",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
