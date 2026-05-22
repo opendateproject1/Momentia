@@ -9,7 +9,6 @@ import {
 import { ChevronDown, HeartPulse } from "lucide-react";
 import { useEffect, useRef } from "react";
 
-import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -325,7 +324,7 @@ export function Hero() {
           {/* H1 */}
           <motion.h1
             variants={fadeUp}
-            className="mb-5 text-2xl font-bold tracking-tight text-foreground sm:mb-7 sm:text-3xl md:text-5xl lg:text-6xl leading-tight sm:leading-tight md:leading-[1.2] lg:leading-[1.15]"
+            className="mb-5 text-2xl font-bold tracking-tight text-foreground sm:mb-6 sm:text-3xl md:text-4xl lg:text-5xl leading-tight md:leading-[1.2] lg:leading-[1.15]"
           >
             Modernizing Healthcare Organizations with{" "}
             <span className="bg-gradient-to-r from-primary via-primary/75 to-accent bg-clip-text text-transparent">
@@ -336,35 +335,13 @@ export function Hero() {
           {/* Subtitle */}
           <motion.p
             variants={fadeUp}
-            className="mx-auto mb-6 max-w-2xl text-base leading-relaxed text-foreground/58 sm:mb-8 sm:text-lg md:text-xl lg:mb-11"
+            className="mx-auto mb-8 max-w-xl text-sm leading-relaxed text-foreground/58 sm:mb-10 sm:text-base lg:mb-12"
           >
             Momentia IO helps healthcare organizations improve operational
             visibility, reduce administrative burden, strengthen revenue cycle
             performance, and support smarter decision-making through automation,
             analytics, and healthcare-focused technology solutions.
           </motion.p>
-
-          {/* CTAs */}
-          <motion.div
-            variants={fadeUp}
-            className="mb-8 flex flex-col items-center justify-center gap-2.5 sm:mb-11 sm:flex-wrap sm:gap-3"
-          >
-            <InteractiveHoverButton
-              href="/#contact"
-              text="Schedule a Consultation"
-              interest="General Inquiry"
-            />
-            <InteractiveHoverButton
-              href="/#contact"
-              text="Request a Revenue Cycle Assessment"
-              interest="Medical Billing & End-to-End Revenue Cycle Management"
-            />
-            <InteractiveHoverButton
-              href="/#contact"
-              text="Get a HIPAA Security Assessment"
-              interest="Cybersecurity & Compliance"
-            />
-          </motion.div>
         </motion.div>
       </motion.div>
 

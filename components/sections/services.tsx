@@ -140,7 +140,7 @@ export function Services() {
       ref={sectionRef}
       id="services"
       className="relative w-full overflow-hidden py-16 md:py-20"
-      aria-label="Security Services"
+      aria-label="Healthcare Services"
     >
       {/* Ambient orbs */}
       <motion.div
