@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \"const fs=require\\('fs'\\); const buf=fs.readFileSync\\('public/momentia-logo.png'\\); const png=buf.slice\\(16,24\\); console.log\\('width:',buf.readUInt32BE\\(16\\),'height:',buf.readUInt32BE\\(20\\)\\);\")"
+    ]
+  }
+}

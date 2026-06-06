@@ -76,7 +76,7 @@ function buildThemeColors() {
 
   const result = {
     backgroundTop: resolve(["--background"], 1),
-    backgroundBottom: resolve(["--muted", "--background"], 0.97),
+    backgroundBottom: resolve(["--background"], 1),
     wavePalette: [
       {
         offset: 0,
@@ -218,8 +218,7 @@ export function Hero() {
       ctx.lineWidth = 2.5;
       ctx.strokeStyle = wave.color;
       ctx.globalAlpha = wave.opacity;
-      ctx.shadowBlur = 32;
-      ctx.shadowColor = wave.color;
+      ctx.shadowBlur = 0;
       ctx.stroke();
       ctx.restore();
     };
@@ -266,22 +265,6 @@ export function Hero() {
         className="absolute inset-0 h-full w-full"
         aria-hidden
       />
-
-      {/* Ambient glow orbs — sit on top of canvas */}
-      <div className="pointer-events-none absolute inset-0" aria-hidden>
-        <motion.div
-          className="absolute left-1/2 top-[-60px] h-[320px] w-[320px] -translate-x-1/2 rounded-full bg-primary/[0.04] blur-[100px] sm:top-[-80px] sm:h-[480px] sm:w-[480px] sm:bg-primary/[0.05] sm:blur-[140px] lg:h-[560px] lg:w-[560px] lg:bg-primary/[0.06] lg:blur-[160px]"
-          style={{ y: orb1Y }}
-        />
-        <motion.div
-          className="absolute -bottom-16 right-0 h-[240px] w-[240px] rounded-full bg-secondary/[0.05] blur-[80px] sm:-bottom-20 sm:h-[320px] sm:w-[320px] sm:bg-secondary/[0.06] sm:blur-[120px] lg:h-[400px] lg:w-[400px] lg:bg-secondary/[0.07] lg:blur-[140px]"
-          style={{ y: orb2Y }}
-        />
-        <motion.div
-          className="absolute left-1/4 top-1/3 h-[200px] w-[200px] rounded-full bg-accent/[0.03] blur-[70px] sm:h-[260px] sm:w-[260px] sm:bg-accent/[0.035] sm:blur-[100px] lg:h-[320px] lg:w-[320px] lg:bg-accent/[0.04] lg:blur-[130px]"
-          style={{ y: orb3Y }}
-        />
-      </div>
 
       {/* Bottom fade-out into next section */}
       <div

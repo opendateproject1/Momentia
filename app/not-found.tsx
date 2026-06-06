@@ -5,16 +5,16 @@ export default function NotFound() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-background px-6 text-center">
       {/* Logo */}
-      <Link href="/" className="mb-10 flex items-center gap-2.5">
+      <Link href="/" className="mb-10 flex items-center">
         <Image
-          src="/logo.png"
+          src="/momentia-logo.png"
           alt="Momentia IO"
-          width={40}
-          height={40}
+          width={160}
+          height={44}
           priority
           style={{ objectFit: "contain" }}
+          className="h-20 w-auto"
         />
-        <span className="text-lg font-bold text-foreground">Momentia IO</span>
       </Link>
 
       {/* 404 label */}

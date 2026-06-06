@@ -63,18 +63,17 @@ export function Footer() {
         >
           {/* Branding */}
           <motion.div className="flex flex-col gap-4" variants={itemVariants}>
-            <Link href="/" className="flex items-center gap-2.5 w-fit">
+            <Link href="/" className="flex items-center w-fit">
               <Image
-                src="/logo.png"
+                src="/momentia-logo.png"
                 alt="Momentia IO Logo"
-                width={36}
-                height={36}
+                width={160}
+                height={44}
                 priority
                 quality={100}
                 style={{ objectFit: "contain" }}
-                className="w-9 h-9"
+                className="h-20 w-auto"
               />
-              <span className="text-lg font-bold text-foreground">Momentia IO</span>
             </Link>
             <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
               Healthcare AI • Revenue Cycle Management • EHR Integration •
