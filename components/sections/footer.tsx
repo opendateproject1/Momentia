@@ -11,9 +11,9 @@ const EASE_EXPO = [0.16, 1, 0.3, 1] as const
 
 const navLinks = [
   { label: 'Home', href: '/' },
-  { label: 'Services', href: '/#services' },
-  { label: 'Industries', href: '/#industries' },
-  { label: 'Contact', href: '/#contact' },
+  { label: 'About', href: '/about' },
+  { label: 'Services', href: '/services' },
+  { label: 'Contact Us', href: '/contact' },
 ]
 
 export function Footer() {
@@ -96,7 +96,7 @@ export function Footer() {
               Reach out for a consultation, revenue cycle assessment, or HIPAA security review.
             </p>
             <motion.a
-              href="/#contact"
+              href="/contact"
               className="mt-1 inline-flex w-fit items-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-xs font-semibold text-white transition-all duration-300 hover:bg-primary/90"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
@@ -149,19 +149,19 @@ export function Footer() {
             </h4>
             <div className="flex flex-col gap-2">
               {[
-                { label: 'Medical Billing & RCM', href: '/#services' },
-                { label: 'EHR Integration Solutions', href: '/#services' },
-                { label: 'AI & Healthcare Automation', href: '/#services' },
-                { label: 'Healthcare Data Strategy', href: '/#services' },
-                { label: 'Cybersecurity & Compliance', href: '/#services' },
+                { label: 'Medical Billing & RCM', href: '/services' },
+                { label: 'EHR Integration & Workflow', href: '/services' },
+                { label: 'AI-Powered Automation', href: '/services' },
+                { label: 'Strategic Advisory Services', href: '/services' },
+                { label: 'Cybersecurity & Compliance', href: '/services' },
               ].map((link) => (
-                <a
+                <Link
                   key={link.label}
                   href={link.href}
                   className="group w-fit text-sm text-muted-foreground transition-colors duration-200 hover:text-primary"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </div>
           </motion.div>
