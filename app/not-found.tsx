@@ -13,7 +13,7 @@ export default function NotFound() {
           height={44}
           priority
           style={{ objectFit: "contain" }}
-          className="h-20 w-auto"
+          className="h-12 w-auto"
         />
       </Link>
 

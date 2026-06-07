@@ -8,7 +8,6 @@ import {
 } from "framer-motion";
 import {
   Activity,
-  ArrowRight,
   DollarSign,
   Eye,
   HeartPulse,
@@ -54,9 +53,9 @@ const SERVICES: ServiceItem[] = [
   },
   {
     icon: <Eye className="w-5 h-5" />,
-    title: "Strengthen data visibility",
+    title: "Data Integration Solutions",
     description:
-      "Turn fragmented healthcare data into dashboards, KPI reporting, and decision-ready insight.",
+      "Streamline data flow, improve system connectivity through EHR integration solutions.",
     side: "right",
   },
   {
@@ -274,11 +273,8 @@ export function About() {
             transition={{ duration: 0.9, delay: 0.4, ease: EASE_EXPO }}
           />
 
-          <p className="max-w-2xl text-base leading-relaxed text-muted-foreground mb-3 sm:text-lg sm:mb-4">
+          <p className="max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
             We combine healthcare expertise with AI-driven operational strategies.
-          </p>
-          <p className="max-w-2xl text-base font-semibold leading-relaxed text-muted-foreground sm:text-lg">
-            Here&apos;s how we help providers:
           </p>
         </motion.div>
 
@@ -349,15 +345,6 @@ export function About() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.7, delay: 0.6 }}
                 >
-                  <motion.a
-                    href="/#services"
-                    className="flex items-center gap-2 rounded-full bg-background/90 px-4 py-2 text-sm font-semibold text-foreground backdrop-blur-sm"
-                    whileHover={{ scale: 1.06 }}
-                    whileTap={{ scale: 0.97 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 22 }}
-                  >
-                    Our Services <ArrowRight className="h-3.5 w-3.5" />
-                  </motion.a>
                 </motion.div>
               </motion.div>
 

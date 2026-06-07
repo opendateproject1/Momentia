@@ -11,10 +11,10 @@ import Image from "next/image";
 import { useState } from "react";
 
 const NAV_LINKS = [
-  { label: "Services", href: "/#services" },
-  { label: "About", href: "/#about" },
-  { label: "Industries", href: "/#industries" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "Contact Us", href: "/contact" },
 ];
 
 const EASE_OUT_EXPO = [0.16, 1, 0.3, 1] as const;
@@ -103,7 +103,7 @@ export default function Navbar() {
                   height={44}
                   priority
                   quality={100}
-                  className="h-10 w-auto sm:h-11 lg:h-12"
+                  className="h-8 w-auto sm:h-9 lg:h-8"
                   style={{ objectFit: "contain" }}
                 />
               </motion.div>
@@ -185,7 +185,7 @@ export default function Navbar() {
           >
             {/* ── Desktop CTA ── */}
             <motion.a
-              href="/#contact"
+              href="/contact"
               className="relative inline-flex items-center gap-2 px-5 py-2 text-sm font-semibold rounded-full overflow-hidden"
               style={{
                 color: "var(--primary-foreground)",
@@ -343,7 +343,7 @@ export default function Navbar() {
                 className="mt-4"
               >
                 <motion.a
-                  href="/#contact"
+                  href="/contact"
                   onClick={() => setMobileOpen(false)}
                   className="inline-flex items-center gap-2 px-6 py-2.5 text-sm font-semibold rounded-full sm:px-8 sm:py-3.5 sm:text-base"
                   style={{

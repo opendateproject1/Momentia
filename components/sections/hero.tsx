@@ -309,9 +309,9 @@ export function Hero() {
             variants={fadeUp}
             className="mb-5 text-2xl font-bold tracking-tight text-foreground sm:mb-6 sm:text-3xl md:text-4xl lg:text-5xl leading-tight md:leading-[1.2] lg:leading-[1.15]"
           >
-            Modernizing Healthcare Organizations with{" "}
+            Modernizing Healthcare Operations Through{" "}
             <span className="bg-gradient-to-r from-primary via-primary/75 to-accent bg-clip-text text-transparent">
-              AI-Driven Operational Transformation and Revenue Cycle Optimization
+              Intelligent Revenue Cycle Solutions.
             </span>
           </motion.h1>
 
@@ -320,10 +320,7 @@ export function Hero() {
             variants={fadeUp}
             className="mx-auto mb-8 max-w-xl text-sm leading-relaxed text-foreground/58 sm:mb-10 sm:text-base lg:mb-12"
           >
-            Momentia IO helps healthcare organizations improve operational
-            visibility, reduce administrative burden, strengthen revenue cycle
-            performance, and support smarter decision-making through automation,
-            analytics, and healthcare-focused technology solutions.
+            Embrace Innovation with Confidence.
           </motion.p>
         </motion.div>
       </motion.div>

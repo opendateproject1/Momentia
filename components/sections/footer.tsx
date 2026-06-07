@@ -72,7 +72,7 @@ export function Footer() {
                 priority
                 quality={100}
                 style={{ objectFit: "contain" }}
-                className="h-20 w-auto"
+                className="h-12 w-auto"
               />
             </Link>
             <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
