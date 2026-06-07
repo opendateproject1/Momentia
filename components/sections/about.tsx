@@ -249,16 +249,6 @@ export function About() {
             scale: headerScale,
           }}
         >
-          <motion.span
-            className="mb-2 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.25em] text-primary sm:mb-3 sm:gap-2 sm:tracking-[0.28em]"
-            initial={{ opacity: 0, y: -10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
-            <HeartPulse className="h-3 w-3 sm:h-3.5 sm:w-3.5" aria-hidden />
-            About Momentia IO
-          </motion.span>
 
           <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl sm:mb-5">
             Healthcare Operations Built for the Future
