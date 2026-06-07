@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(node -e \"const fs=require\\('fs'\\); const buf=fs.readFileSync\\('public/momentia-logo.png'\\); const png=buf.slice\\(16,24\\); console.log\\('width:',buf.readUInt32BE\\(16\\),'height:',buf.readUInt32BE\\(20\\)\\);\")",
-      "Bash(npx next *)"
+      "Bash(npx next *)",
+      "Bash(cp public/favicon.svg app/icon.png)",
+      "Bash(node -e \"const b=require\\('fs'\\).readFileSync\\('app/icon.png'\\); console.log\\('app/icon.png ->', b.slice\\(1,4\\).toString\\(\\), 'dims:', b.readUInt32BE\\(16\\)+'x'+b.readUInt32BE\\(20\\), 'bytes:', b.length\\)\")"
     ]
   }
 }

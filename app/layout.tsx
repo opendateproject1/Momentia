@@ -36,9 +36,6 @@ const SITE_DESCRIPTION =
 export const metadata: Metadata = {
   title: SITE_TITLE,
   description: SITE_DESCRIPTION,
-  icons: {
-    icon: "/favicon.svg",
-  },
   keywords: [
     "healthcare AI",
     "revenue cycle management",
