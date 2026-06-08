@@ -78,7 +78,7 @@ export function OurStory() {
 
             {/* Mission text */}
             <p className="text-base leading-relaxed text-foreground sm:text-lg">
-              Momentia IO empowers healthcare organizations with practical
+              Momentia IO empowers Healthcare Organizations with practical
               solutions that optimize workflows, drive efficiency, and strengthen
               long-term growth.
             </p>
