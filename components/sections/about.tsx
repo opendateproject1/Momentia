@@ -32,21 +32,21 @@ interface ServiceItem {
 const SERVICES: ServiceItem[] = [
   {
     icon: <DollarSign className="w-5 h-5" />,
-    title: "Increase reimbursements",
+    title: "Increase Reimbursements",
     description:
       "Optimize claim quality and coding accuracy to recover revenue that's currently slipping through the cracks.",
     side: "left",
   },
   {
     icon: <TrendingUp className="w-5 h-5" />,
-    title: "Reduce claim denials",
+    title: "Reduce Claim Denials",
     description:
       "AI-assisted denial prediction and proactive workflows that catch issues before claims are submitted.",
     side: "left",
   },
   {
     icon: <Workflow className="w-5 h-5" />,
-    title: "Improve workflow efficiency",
+    title: "Improve Workflow Efficiency",
     description:
       "Automate administrative burden so clinical and operations teams focus on what matters most.",
     side: "left",
@@ -60,14 +60,14 @@ const SERVICES: ServiceItem[] = [
   },
   {
     icon: <Activity className="w-5 h-5" />,
-    title: "Enhance operational performance",
+    title: "Enhance Operational Solutions",
     description:
       "Measurable improvements across revenue cycle, scheduling, prior authorization, and AR follow-up.",
     side: "right",
   },
   {
     icon: <HeartPulse className="w-5 h-5" />,
-    title: "Modernize healthcare systems",
+    title: "Modernize Healthcare Systems",
     description:
       "Practical, scalable modernization that delivers value without overwhelming your internal teams.",
     side: "right",
@@ -264,7 +264,7 @@ export function About() {
           />
 
           <p className="max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            We combine healthcare expertise with AI-driven operational strategies.
+            We combine healthcare expertise with AI-driven Operational strategies.
           </p>
         </motion.div>
 

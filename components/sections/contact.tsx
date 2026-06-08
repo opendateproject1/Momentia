@@ -41,7 +41,7 @@ const AREAS_OF_INTEREST = [
   'Healthcare Data Strategy',
   'AI Solutions',
   'Cybersecurity & Compliance',
-  'Other / General Inquiry',
+  'General Inquiry',
 ] as const
 
 const inputBase =
@@ -231,8 +231,7 @@ export function Contact() {
                 <span className="font-semibold text-foreground">
                   HIPAA-aware &amp; confidential.
                 </span>{' '}
-                We treat every inquiry with strict professional discretion and
-                handle organizational details with the care healthcare demands.
+                We treat every inquiry with strict professional discretion.
               </p>
           </motion.div>
 

@@ -48,14 +48,13 @@ export function OurStory() {
           style={{ opacity: bodyOpacity, y: bodyY }}
           className="mb-12 text-2xl font-normal leading-relaxed text-foreground/80 sm:text-3xl sm:leading-relaxed"
         >
-          Momentia IO was founded to help healthcare organizations improve
+          Momentia IO was founded to help Healthcare Organizations improve
           financial performance by strengthening{" "}
           <strong className="font-bold text-foreground">
             Revenue Cycle Management
           </strong>
-          , reduce administrative burden by streamlining operations, and support
-          smarter decision-making through healthcare-focused technology
-          solutions.
+          , and support smarter decision-making through Healthcare-focused
+          technology solutions.
         </motion.p>
 
         {/* Mission card — green left border, icon + label row, then text */}

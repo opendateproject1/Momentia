@@ -75,10 +75,6 @@ export function Footer() {
                 className="h-12 w-auto"
               />
             </Link>
-            <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
-              Healthcare AI • Revenue Cycle Management • EHR Integration •
-              Data Strategy • Operational Modernization.
-            </p>
             <a
               href="mailto:info@momentia.io"
               className="w-fit text-sm text-primary underline-offset-4 hover:underline"
@@ -92,9 +88,6 @@ export function Footer() {
             <h3 className="text-sm font-semibold text-foreground">
               Ready to modernize your operations?
             </h3>
-            <p className="text-xs text-muted-foreground">
-              Reach out for a consultation, revenue cycle assessment, or HIPAA security review.
-            </p>
             <motion.a
               href="/contact"
               className="mt-1 inline-flex w-fit items-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-xs font-semibold text-white transition-all duration-300 hover:bg-primary/90"
@@ -153,7 +146,7 @@ export function Footer() {
                 { label: 'EHR Integration & Workflow', href: '/services' },
                 { label: 'AI-Powered Automation', href: '/services' },
                 { label: 'Strategic Advisory Services', href: '/services' },
-                { label: 'Cybersecurity & Compliance', href: '/services' },
+                { label: 'Compliance and Risk Management', href: '/services' },
               ].map((link) => (
                 <Link
                   key={link.label}

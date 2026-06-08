@@ -67,9 +67,9 @@ const MAIN_SERVICES = [
   },
   {
     icon: <ShieldCheck className="h-8 w-8 text-primary" />,
-    title: "Cybersecurity & Compliance",
+    title: "Compliance and Risk Management",
     subtitle: "Strengthening Regulatory Compliance",
-    description: "Strengthening compliance and reducing risk through comprehensive healthcare cybersecurity and compliance solutions.",
+    description: "Supporting healthcare organizations with HIPAA compliance, data privacy, and risk management initiatives.",
     highlights: [
       "HIPAA security assessments",
       "Vendor risk analysis",
