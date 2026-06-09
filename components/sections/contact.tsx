@@ -11,7 +11,7 @@ const CONTACT_EMAIL = 'info@momentia.io'
 
 const contactDetails = [
   { icon: Mail, label: 'Email', value: CONTACT_EMAIL, href: `mailto:${CONTACT_EMAIL}` },
-  { icon: MapPin, label: 'Website', value: 'momentia.io', href: 'https://www.momentia.io' },
+  { icon: MapPin, label: 'Website', value: 'momentiaio.com', href: 'https://www.momentiaio.com' },
 ]
 
 const socialLinks = [

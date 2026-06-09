@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const BASE = "https://momentia.io";
+const BASE = "https://momentiaio.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

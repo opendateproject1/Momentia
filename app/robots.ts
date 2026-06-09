@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://momentia.io/sitemap.xml",
+    sitemap: "https://momentiaio.com/sitemap.xml",
   };
 }
