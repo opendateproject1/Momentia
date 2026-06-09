@@ -7,7 +7,7 @@ import { Mail, MapPin, ArrowRight, CheckCircle, HeartPulse } from 'lucide-react'
 
 const EASE_EXPO = [0.16, 1, 0.3, 1] as const
 
-const CONTACT_EMAIL = 'info@momentia.io'
+const CONTACT_EMAIL = 'info@momentiaio.com'
 
 const contactDetails = [
   { icon: Mail, label: 'Email', value: CONTACT_EMAIL, href: `mailto:${CONTACT_EMAIL}` },
@@ -384,10 +384,10 @@ export function Contact() {
                   <p className="text-center text-xs text-muted-foreground">
                     Or email us directly at{' '}
                     <a
-                      href="mailto:info@momentia.io"
+                      href="mailto:info@momentiaio.com"
                       className="text-primary hover:underline underline-offset-4"
                     >
-                      info@momentia.io
+                      info@momentiaio.com
                     </a>
                   </p>
                 </motion.form>

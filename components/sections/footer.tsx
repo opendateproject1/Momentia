@@ -76,10 +76,10 @@ export function Footer() {
               />
             </Link>
             <a
-              href="mailto:info@momentia.io"
+              href="mailto:info@momentiaio.com"
               className="w-fit text-sm text-primary underline-offset-4 hover:underline"
             >
-              info@momentia.io
+              info@momentiaio.com
             </a>
           </motion.div>
 
