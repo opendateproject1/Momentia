@@ -52,6 +52,7 @@ export function Contact() {
   const contentRef = useRef<HTMLDivElement>(null)
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string>('')
   const [interest, setInterest] = useState<string>('')
 
   useEffect(() => {
@@ -92,30 +93,39 @@ export function Contact() {
   const orb1Y = useTransform(sectionProgress, [0, 0.5, 1], [0, -70, -140])
   const orb2Y = useTransform(sectionProgress, [0, 0.5, 1], [0, 70, 140])
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setLoading(true)
+    setError('')
 
-    const formEl = e.currentTarget
-    const data = new FormData(formEl)
-    const name = (data.get('name') as string) ?? ''
-    const organization = (data.get('organization') as string) ?? ''
-    const email = (data.get('email') as string) ?? ''
-    const phone = (data.get('phone') as string) ?? ''
-    const area = (data.get('area') as string) ?? ''
-    const subject = `Inquiry — ${area || 'General Inquiry'}`
-    const body = [
-      `Name: ${name}`,
-      `Organization: ${organization}`,
-      `Email: ${email}`,
-      `Phone: ${phone || '—'}`,
-      `Area of Interest: ${area}`,
-    ].join('\n')
+    const data = new FormData(e.currentTarget)
+    const payload = {
+      name: (data.get('name') as string) ?? '',
+      organization: (data.get('organization') as string) ?? '',
+      email: (data.get('email') as string) ?? '',
+      phone: (data.get('phone') as string) ?? '',
+      area: (data.get('area') as string) ?? '',
+      company: (data.get('company') as string) ?? '', // honeypot
+    }
 
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
 
-    setLoading(false)
-    setSubmitted(true)
+      if (!res.ok) {
+        const { error: message } = await res.json().catch(() => ({ error: '' }))
+        throw new Error(message || 'Something went wrong. Please try again.')
+      }
+
+      setSubmitted(true)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -282,6 +292,16 @@ export function Contact() {
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.3 }}
                 >
+                  {/* Honeypot — hidden from humans, bots fill it and get rejected */}
+                  <input
+                    type="text"
+                    name="company"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                    className="absolute left-[-9999px] h-0 w-0 opacity-0"
+                  />
+
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div className="flex flex-col gap-1.5">
                       <label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
@@ -356,6 +376,12 @@ export function Contact() {
                       ))}
                     </select>
                   </div>
+
+                  {error && (
+                    <p className="rounded-lg border border-red-500/30 bg-red-500/5 px-4 py-3 text-sm text-red-500">
+                      {error}
+                    </p>
+                  )}
 
                   <motion.button
                     type="submit"
