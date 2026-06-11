@@ -6,6 +6,15 @@ const resend = new Resend(process.env.RESEND_API_KEY)
 const TO_EMAIL = process.env.CONTACT_TO_EMAIL ?? 'info@momentiaio.com'
 const FROM_EMAIL = process.env.CONTACT_FROM_EMAIL ?? 'onboarding@resend.dev'
 
+// Surface misconfiguration in logs rather than silently failing/sending from
+// the Resend sandbox sender (which only delivers to the account owner).
+if (!process.env.RESEND_API_KEY) {
+  console.error('[contact] RESEND_API_KEY is not set — email sends will fail.')
+}
+if (!process.env.CONTACT_FROM_EMAIL) {
+  console.warn('[contact] CONTACT_FROM_EMAIL is not set — falling back to the Resend sandbox sender, which only delivers to the account owner.')
+}
+
 const escapeHtml = (value: string) =>
   value
     .replace(/&/g, '&amp;')

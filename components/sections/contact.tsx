@@ -304,11 +304,12 @@ export function Contact() {
 
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                      <label htmlFor="contact-name" className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                         Name *
                       </label>
                       <input
                         required
+                        id="contact-name"
                         name="name"
                         type="text"
                         placeholder="Jane Smith"
@@ -316,11 +317,12 @@ export function Contact() {
                       />
                     </div>
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                      <label htmlFor="contact-organization" className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                         Organization *
                       </label>
                       <input
                         required
+                        id="contact-organization"
                         name="organization"
                         type="text"
                         placeholder="Healthcare provider, group, or facility"
@@ -331,11 +333,12 @@ export function Contact() {
 
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                      <label htmlFor="contact-email" className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                         Email *
                       </label>
                       <input
                         required
+                        id="contact-email"
                         name="email"
                         type="email"
                         placeholder="jane@organization.com"
@@ -343,10 +346,11 @@ export function Contact() {
                       />
                     </div>
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                      <label htmlFor="contact-phone" className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                         Phone Number
                       </label>
                       <input
+                        id="contact-phone"
                         name="phone"
                         type="tel"
                         placeholder="Optional"
@@ -356,11 +360,12 @@ export function Contact() {
                   </div>
 
                   <div className="flex flex-col gap-1.5">
-                    <label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                    <label htmlFor="contact-area" className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                       Area of Interest *
                     </label>
                     <select
                       required
+                      id="contact-area"
                       name="area"
                       value={interest}
                       onChange={(e) => setInterest(e.target.value)}
